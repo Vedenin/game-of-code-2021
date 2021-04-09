@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
@@ -7,14 +8,18 @@
 
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
           integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
           crossorigin=""/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+          integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+          integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+          crossorigin="anonymous">
     <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
             integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
             crossorigin=""></script>
-    <link th:href="@{/app.css}" rel="stylesheet" />
+    <link th:href="@{/app.css}" rel="stylesheet"/>
 
 </head>
 <body>
@@ -28,14 +33,12 @@
         <article id="home" class="active1" style="height: 888px;">
             <div class="pageblock" id="fullscreen">
                 <div class="container">
-                    <div id="mapid"
-                         style="position: absolute;  width: 800px; bottom: 0px; top: 100px; left: 0px;"></div>
-                    <div id="text"
-                         style="background-color: #e0ecf4; position: absolute; top: 100px; left: 850px;  bottom: 0px; margin-left">
-                        <p style="margin-left: 30px;">
+                    <div id="mapid"></div>
+                    <div id="text">
+                        <p class="ml-30">
                             <h7><b>Information</b></h7>
                             <br>
-                        <div id="id1" style="margin-left: 30px;">
+                        <div id="id1" class="ml-30">
                             <p>Digitised Luxembourg Historical Newspapers | Journaux Historiques Luxembourgeois
                                 Numérisés bnl-historical-newspapers</p>>
 
@@ -48,17 +51,10 @@
                         </div>
                         </p>
                     </div>
-
                 </div>
-
             </div>
-
-
         </article>
-
-
     </section>
-
     <script>
 
         var mymap = L.map('mapid').setView([49.611, 6.13], 13);
@@ -93,5 +89,6 @@
 
     </script>
 
+</div>
 </body>
 </html>

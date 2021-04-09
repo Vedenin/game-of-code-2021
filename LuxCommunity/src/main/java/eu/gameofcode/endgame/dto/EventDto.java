@@ -4,6 +4,7 @@ import java.util.Date;
 
 public class EventDto {
 
+    private Integer id;
     private String latitude;
     private String longitude;
     private String name;
@@ -13,6 +14,13 @@ public class EventDto {
     private boolean isOnline;
     private String urlEvent;
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getLongitude() {
         return longitude;

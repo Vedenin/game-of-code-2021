@@ -54,11 +54,14 @@
                 <div class="pageblock" id="fullscreen">
                     <div class="container">
                         <div id="mapid"></div>
-                        <div id="text">
+                        <div id="event-description" class="card">
                             <p class="ml-30">
-                                <h7><b>Information</b></h7>
-                                <br>
-                            <div id="id1" class="ml-30">
+                            <div class="card-header">
+                                <h4>Event Information</h4>
+                            </div>
+                            <div class="card-body">
+                                <div id="id1" class="ml-30">
+                                </div>
                             </div>
                             </p>
                         </div>
@@ -132,7 +135,66 @@
             L.marker([obj.latitude, obj.longitude]).on('click', function (e) {
                 change("<p ><b> Name:</b>  <b id=\"name\"></b>" + obj.name + "</p>" +
                     "<p><b> Description:</b> " + obj.description + "</p>" +
-                    "<p><b> Date:</b> " + obj.eventTime + "</p>");
+                    "<p><b> Date:</b> " + obj.eventTime + "</p>"
+                + "<h1 class=\"text-center\">Photo Gallery</h1>\n" +
+                "<div class=\"row mb-4\">\n" +
+                    "            <div class=\"col-md-4\">\n" +
+                    "                <a href=\"http://source.unsplash.com/random/160x160\"\n" +
+                    "                   data-toggle=\"lightbox\"\n" +
+                    "                   data-gallery=\"img-gallery\"\n" +
+                    "                   data-height=\"160\"\n" +
+                    "                   data-width=\"160\">\n" +
+                    "                    <img src=\"http://source.unsplash.com/random/160x160?" + obj.name +"\" alt=\"image\" class=\"img-fluid\">\n" +
+                    "                </a>\n" +
+                    "            </div>\n" +
+                    "            <div class=\"col-md-4\">\n" +
+                    "                <a href=\"http://source.unsplash.com/random/160x160\"\n" +
+                    "                   data-toggle=\"lightbox\"\n" +
+                    "                   data-gallery=\"img-gallery\"\n" +
+                    "                   data-height=\"161\"\n" +
+                    "                   data-width=\"161\">\n" +
+                    "                    <img src=\"http://source.unsplash.com/random/161x161?" + obj.name +"\" alt=\"image\" class=\"img-fluid\">\n" +
+                    "                </a>\n" +
+                    "            </div>\n" +
+                    "            <div class=\"col-md-4\">\n" +
+                    "                <a href=\"http://source.unsplash.com/random/160x160\"\n" +
+                    "                   data-toggle=\"lightbox\"\n" +
+                    "                   data-gallery=\"img-gallery\"\n" +
+                    "                   data-height=\"162\"\n" +
+                    "                   data-width=\"162\">\n" +
+                    "                    <img src=\"http://source.unsplash.com/random/162x162?" + obj.name +"\" alt=\"image\" class=\"img-fluid\">\n" +
+                    "                </a>\n" +
+                    "            </div>\n" +
+                    "        </div>\n" +
+                    "        <div class=\"row mb-4\">\n" +
+                    "            <div class=\"col-md-4\">\n" +
+                    "                <a href=\"http://source.unsplash.com/random/163x163\"\n" +
+                    "                   data-toggle=\"lightbox\"\n" +
+                    "                   data-gallery=\"img-gallery\"\n" +
+                    "                   data-height=\"163\"\n" +
+                    "                   data-width=\"163\">\n" +
+                    "                    <img src=\"http://source.unsplash.com/random/163x163?" + obj.name +"\" alt=\"image\" class=\"img-fluid\">\n" +
+                    "                </a>\n" +
+                    "            </div>\n" +
+                    "            <div class=\"col-md-4\">\n" +
+                    "                <a href=\"http://source.unsplash.com/random/164x164\"\n" +
+                    "                   data-toggle=\"lightbox\"\n" +
+                    "                   data-gallery=\"img-gallery\"\n" +
+                    "                   data-height=\"164\"\n" +
+                    "                   data-width=\"164\">\n" +
+                    "                    <img src=\"http://source.unsplash.com/random/164x164?" + obj.name +"\" alt=\"image\" class=\"img-fluid\">\n" +
+                    "                </a>\n" +
+                    "            </div>\n" +
+                    "            <div class=\"col-md-4\">\n" +
+                    "                <a href=\"http://source.unsplash.com/random/165x165\"\n" +
+                    "                   data-toggle=\"lightbox\"\n" +
+                    "                   data-gallery=\"img-gallery\"\n" +
+                    "                   data-height=\"165\"\n" +
+                    "                   data-width=\"165\">\n" +
+                    "                    <img src=\"http://source.unsplash.com/random/165x165?" + obj.name +"\" alt=\"image\" class=\"img-fluid\">\n" +
+                    "                </a>\n" +
+                    "            </div>\n" +
+                    "        </div>\n");
             }).addTo(mymap).bindPopup(obj.name).openPopup();
         }
 

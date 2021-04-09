@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Lux Search</title>
+    </head>
+    <body>
+        <h1>Search for Luxembourg sites (public)</h1>
+        <script async src="https://cse.google.com/cse.js?cx=b2cd9e8f89a46fd12"></script>
+        <div class="gcse-search"></div>
+
+        <p>Version: 1.01</p>
+        <form th:action="@{/logout}" method="post">
+            <input type="submit" value="Sign Out"/>
+        </form>
+    </body>
+</html>

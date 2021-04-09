@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <head>
+        <title>Game of code</title>
+    </head>
+    <body>
+        <h1>Game of code</h1>
+        <p th:inline="text">User: [[${#httpServletRequest.remoteUser}]]</p>
+        <p><h3>Menu</h3></p>
+        <p><a href="luxsearch">Search for Luxembourg sites</a> </p>
+        <p><a href="luxsearch_public">Search for Luxembourg sites (public sites - governments, local and so on..)</a> </p>
+        <p><a href="luxsearch_access">Search for Luxembourg sites (web accessibility sites)</a> </p>
+        <p><a href="map">Map</a> </p>
+        <p><a href="history">history</a> </p>
+
+        <p>Version: 1.02</p>
+        <form th:action="@{/logout}" method="post">
+            <input type="submit" value="Sign Out"/>
+        </form>
+    </body>
+</html>

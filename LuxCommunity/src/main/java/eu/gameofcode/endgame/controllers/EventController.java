@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 
 @Controller
-@RequestMapping("/events")
+@RequestMapping("/")
 public class EventController {
 
     private final EventService eventService;

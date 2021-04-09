@@ -23,84 +23,105 @@
 
 </head>
 <body>
-<header class="closed">
-    <img src="search.webp" alt="search image" width="50" height="35">
-    <h1>Game of code 2021</h1>
-</header>
 
 <div id="menu-wrap">
+    <nav class="navbar navbar-expand-sm bg-light navbar-light fixed-top">
+        <div class="container">
+            <img src="search.webp" alt="search image" width="70" height="35">
+            <a href="/" class="navbar-brand">Game of code 2021</a>
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item active">
+                        <a href="/" class="nav-link">Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/about" class="nav-link">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/contact" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
     <section id="content">
-        <article id="home" class="active1" style="height: 888px;">
-            <div class="pageblock" id="fullscreen">
-                <div class="container">
-                    <div id="mapid"></div>
-                    <div id="text">
-                        <p class="ml-30">
-                            <h7><b>Information</b></h7>
-                            <br>
-                        <div id="id1" class="ml-30">
-                            <p>Digitised Luxembourg Historical Newspapers | Journaux Historiques Luxembourgeois
-                                Numérisés bnl-historical-newspapers</p>>
+        <div class="container">
+            <article id="home" class="active1" style="height: 888px;">
+                <div class="pageblock" id="fullscreen">
+                    <div class="container">
+                        <div id="mapid"></div>
+                        <div id="text">
+                            <p class="ml-30">
+                                <h7><b>Information</b></h7>
+                                <br>
+                            <div id="idGame of code 20211" class="ml-30">
+                                <p>Digitised Luxembourg Historical Newspapers | Journaux Historiques Luxembourgeois
+                                    Numérisés bnl-historical-newspapers</p>>
 
-                            <p>Since 2002, the BnL has been digitising a large variety of historical documents such as
-                                newspapers, monographs, manuscripts,
-                                postcards and even posters.</p>
+                                <p>Since 2002, the BnL has been digitising a large variety of historical documents such
+                                    as
+                                    newspapers, monographs, manuscripts,
+                                    postcards and even posters.</p>
 
-                            <p>Here you can find Historical Newspapers events in the map.</p>
+                                <p>Here you can find Historical Newspapers events in the map.</p>
 
+                            </div>
+                            </p>
                         </div>
-                        </p>
                     </div>
                 </div>
-            </div>
-        </article>
+            </article>
+        </div>
     </section>
     <section id="add-event">
-        <div class="card p-4">
-            <div class="card-body">
-                <h3 class="text-center">Please fill out this form to add event</h3>
-                <hr/>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Event Name">
+        <div class="container">
+            <div class="card p-4">
+                <div class="card-body">
+                    <h3 class="text-center">Please fill out this form to add event</h3>
+                    <hr/>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Event Name">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Date and Time">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="email" class="form-control" placeholder="Location">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Categories">
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Date and Time">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <textarea class="form-control" placeholder="Description"></textarea>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Location">
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Categories">
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <textarea class="form-control" placeholder="Description"></textarea>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="form-group">
-                            <input type="submit" value="Submit" class="btn btn-outline-danger w-100">
+                        <div class="col">
+                            <div class="form-group">
+                                <input type="submit" value="Submit" class="btn btn-outline-danger w-100">
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
     </section>
-    <script th:inline="javascript">
-
-        /*<![CDATA[*/
+    <script>
 
         var mymap = L.map('mapid').setView([49.611, 6.13], 13);
 
@@ -113,27 +134,17 @@
             accessToken: 'pk.eyJ1IjoidmVkZW5pbjE5ODAiLCJhIjoiY2tuOTkyNTkyMGhvbzJ3cGRjbXA2djR2ZSJ9.MhYaxggSKZ0APuZgEoS2Qg'
         }).addTo(mymap);
 
+        L.marker([50.0188907, 5.9640793]).on('click', function (e) {
+            change("<p><b> Address:</b> 28 kleinhoscheid</p><p><b> id:</b> https://persist.lu/ark:/70795/ghkz8q/articles/DTL43</p><p><b> Language (machine learning):</b>  GERMAN</p><p><b> Language (old):</b> de</p><p><b> Date:</b> 1870-06-01</p><p><b> Type:</b> ARTICLE</p><p><b> Description:</b> inland. <b style='color:green'>KLEINHOSCHEID</b>. 28. mai. am gestrigen nachmittage fand die ehefrau des ackerers k. von dahier, ihr circa 12 monate altes mädchen, das sie zum schlafen in die wiöge niedergelegt hatte, neben derselben, die wiegenschnur um den hals gezogen, todt liegen. man glaubt, daß bloßer zufall diese eigenthümliche strangulation hervorrief. nümelingen, 28. mai. daß unerfahrenheil bei handhabung der feuerwaffen immer gefährlich ist, beweist wiederum nachsiehender unfall. der sohn des schumachers s. von allhier batte ein mit schroot geladenes gewehr, das in feiner aeltern wohnung an der wand hing, zur hand genommen. unglücklicherweife entlud sich dasselbe und der schutz traf ein vor dem fenster spielendes kind des nachbars an den kopf. die mutter des kindes die den schuß fallen hörte, eilte vor die wohnung und sieht ihre tochter blutend zur erde liegen. mit hülfe einer anderen person brachte sie dasselbe nach hause. der zustand der kleinen soll bedenk« lich sein.</p> ")
+        }).addTo(mymap).bindPopup(" 28 Kleinhoscheid").openPopup();
 
+        L.marker([49.55614377507916, 5.87894187108816]).on('click', function (e) {
+            change(" <p><b> Address:</b> Rue Guillaume                           </p><p><b> id:</b> https://persist.lu/ark:/70795/s1wx3n/articles/DTL130</p><p><b> url:</b> <a href='https://persist.lu/ark:/70795/s1wx3n/articles/DTL130'> link</a></p><p><b> Language (machine learning):</b>  UNKNOWN</p><p><b> Language (old):</b> </p><p><b> Date:</b> 1878-06-11</p><p><b> Type:</b> ADVERTISEMENT</p><p><b> Description:</b> de 4 places, caves et greniers à 'ouer, <b style='color:green'>RUE GUILLAUME</b>, mai.ou kubohn. 753</p> ")
+        }).addTo(mymap).bindPopup(" Rue Guillaume                            ").openPopup();
 
-        var events = [[${eventsDto}]];
-
-
-        for (var key in events) {
-            var obj = events[key];
-
-
-            L.marker([obj.latitude, obj.longitude]).on('click', function (e) {
-                change("<p ><b> Name:</b>  <b id=\"eventName\"></b></p>" +
-                    "<p><b> Description:</b> <b id=\"eventDescription\"></b></p>" +
-                    "<p><b> Date:</b> <b id=\"eventDate\"></b></p>");
-
-                document.getElementById("eventName").innerHTML = obj.name;
-                document.getElementById("eventDescription").innerHTML = obj.description;
-                document.getElementById("eventDate").innerHTML = obj.eventTime;
-            }).addTo(mymap).bindPopup(obj.name).openPopup();
-
-        }
-
+        L.marker([49.79580160283331, 6.378091794552558]).on('click', function (e) {
+            change(" <p><b> Address:</b> Lauterborn                              </p><p><b> id:</b> https://persist.lu/ark:/70795/h53w50/articles/DTL78</p><p><b> url:</b> <a href='https://persist.lu/ark:/70795/h53w50/articles/DTL78'> link</a></p><p><b> Language (machine learning):</b>  UNKNOWN</p><p><b> Language (old):</b> fr</p><p><b> Date:</b> 1872-01-10</p><p><b> Type:</b> ARTICLE</p><p><b> Description:</b> a, service entre echternach et grevenmacher. de grevenmacher a la maison minsbach fr. 0 40 „ a wecker (gare).... 0 70 „ a biver 0 85 „ a budeler 115 „ a brouch 1 25 „ a bech 1 60 „ a neu-michelshof . ... 1 90 » a <b style='color:green'>LAUTERBORN</b> 2 15 „ a echternach 2 45 a) de grevenmacher à echternach: d’echternach a lauterborn fr. 0 30 „ a neu-michelshof. 0 55 „ k bech 0 85 „ a brouch 1 20 „ a budeler 1 30 „ a biver 1 60 „ a wecker (gare) 1 75 „ a la maison minsbach.... 2 05 „ a grevenmacher 2 45 b) d’echternach à grevenmacher:</p> ")
+        }).addTo(mymap).bindPopup(" Lauterborn                               ").openPopup();
 
 
         var popup = L.popup();
@@ -142,8 +153,15 @@
             document.getElementById("id1").innerHTML = t
         }
 
-        /*]]>*/
     </script>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+            integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+            crossorigin="anonymous"></script>
 
 </div>
 </body>

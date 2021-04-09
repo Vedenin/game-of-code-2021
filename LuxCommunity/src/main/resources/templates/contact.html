@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="UTF-8">
+    <title>About US</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+          integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+          integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css"
+          integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg=="
+          crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css"
+          integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw=="
+          crossorigin="anonymous"/>
+    <link th:href="@{/app.css}" rel="stylesheet"/>
+
+</head>
+<body>
+<nav class="navbar navbar-expand-sm bg-light navbar-light fixed-top">
+    <div class="container">
+        <img src="search.webp" alt="search image" width="70" height="35">
+        <a href="/" class="navbar-brand">Game of code 2021</a>
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a href="/" class="nav-link">Events</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/about" class="nav-link">About Us</a>
+                </li>
+                <li class="nav-item active">
+                    <a href="/contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!--PAGE HEADER-->
+<header id="page-header" th:style="'background: url(/img/bg.jpg) fixed 0 -300px;'">
+    <div class="container py-2">
+        <div class="row">
+            <div class="col-md-6 m-auto text-center text-white">
+                <p class="text-white display-3">Contact US</p>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!--CONTACT SECTION-->
+<section id="contact" class="py-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card p-4">
+                    <div class="card-body">
+                        <h4>Get In Touch</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, fugiat.</p>
+                        <h4>Address</h4>
+                        <p>550 Main st, Luxembourg</p>
+                        <h4>Email</h4>
+                        <p>test@test.com</p>
+                        <h4>Phone</h4>
+                        <p>661 661 661</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="card p-4">
+                    <div class="card-body">
+                        <h3 class="text-center">Please fill out this form to contact us</h3>
+                        <hr/>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="First Name">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Last Name">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="email" class="form-control" placeholder="Email">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Phone Number">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <textarea class="form-control" placeholder="Message"></textarea>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <input type="submit" value="Submit" class="btn btn-outline-danger w-100">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--STAFF-->
+<section id="staff" class="py-5 text-center bg-dark text-white">
+    <p class="text-white display-3">Our Staff</p>
+    <hr>
+    <div class="row">
+        <div class="col-md-4">
+            <img th:src="@{/img/person1.jpeg}" width="200" height="200" alt="person1"
+                 class="img-fluid rounded-circle mb-2">
+            <h4>Slava Vedenin</h4>
+            <small>Lead Software Engineer</small>
+        </div>
+        <div class="col-md-4">
+            <img th:src="@{/img/person2.jpeg}" width="200" height="200" alt="person2"
+                 class="img-fluid rounded-circle mb-2">
+            <h4>Ievgenii Gerasimenko</h4>
+            <small>Software Engineer</small>
+        </div>
+        <div class="col-md-4">
+            <img th:src="@{img/person3.jpeg}" width="200" height="200" alt="person3"
+                 class="img-fluid rounded-circle mb-2">
+            <h4>Aleksei Potapov</h4>
+            <small>Software Engineer</small>
+        </div>
+    </div>
+</section>
+
+<!--FOOTER-->
+<footer id="main-footer" class="text-center p-4">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <p>Copyright &copy; <span id="year"></span> Java Power</p>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+        integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js"
+        integrity="sha512-eP8DK17a+MOcKHXC5Yrqzd8WI5WKh6F1TIk5QZ/8Lbv+8ssblcz7oGC8ZmQ/ZSAPa7ZmsCU4e/hcovqR8jfJqA=="
+        crossorigin="anonymous"></script>
+<script>
+
+    //GEt the current year for the copyright
+    $('#year').text(new Date().getFullYear())
+
+    $('.slider').slick({
+        infinite: true,
+        slideToShow: 1,
+        slideToScroll: 1,
+    })
+</script>
+
+</body>
+</html>

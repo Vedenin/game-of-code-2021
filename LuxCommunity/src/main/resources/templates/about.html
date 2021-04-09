@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="UTF-8">
+    <title>About US</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+          integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+          integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css"
+          integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg=="
+          crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css"
+          integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw=="
+          crossorigin="anonymous"/>
+    <link th:href="@{/app.css}" rel="stylesheet"/>
+
+</head>
+<body>
+<nav class="navbar navbar-expand-sm bg-light navbar-light fixed-top">
+    <div class="container">
+        <img src="search.webp" alt="search image" width="70" height="35">
+        <a href="/" class="navbar-brand">Game of code 2021</a>
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a href="/" class="nav-link">Events</a>
+                </li>
+                <li class="nav-item active">
+                    <a href="/about" class="nav-link">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!--ABOUT SECTION-->
+<section id="about" class="py-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h1>What We Do</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet cumque dicta inventore quasi
+                    repudiandae suscipit?</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet cumque dicta inventore quasi
+                    repudiandae suscipit?</p>
+            </div>
+            <div class="col-md-6">
+                <img src="https://source.unsplash.com/random/500x500/?technology" alt="img"
+                     class="img img-fluid rounded-circle d-none d-md-block about-img">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--ICON BOXES-->
+<section id="icon-boxes" class="p-5">
+    <div class="container">
+        <div class="row mb-4">
+            <div class="col-md-4">
+                <div class="card bg-danger text-white text-center">
+                    <div class="card-body">
+                        <i class="fas fa-building fa-3x"></i>
+                        <h3>Sample heading</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, ratione?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card bg-dark text-white text-center">
+                    <div class="card-body">
+                        <i class="fas fa-bullhorn fa-3x"></i>
+                        <h3>Sample heading</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, ratione?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card bg-danger text-white text-center">
+                    <div class="card-body">
+                        <i class="fas fa-comments fa-3x"></i>
+                        <h3>Sample heading</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, ratione?</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mb-4">
+            <div class="col-md-4">
+                <div class="card bg-dark text-white text-center">
+                    <div class="card-body">
+                        <i class="fas fa-box fa-3x"></i>
+                        <h3>Sample heading</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, ratione?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card bg-danger text-white text-center">
+                    <div class="card-body">
+                        <i class="fas fa-credit-card fa-3x"></i>
+                        <h3>Sample heading</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, ratione?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card bg-dark text-white text-center">
+                    <div class="card-body">
+                        <i class="fas fa-coffee fa-3x"></i>
+                        <h3>Sample heading</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, ratione?</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--TESTIMONIALS-->
+<section id="testimonials" class="p-4 bg-dark text-white">
+    <div class="container">
+        <div class="text-center">
+            <h2>testimonials</h2>
+            <div class="row text-center">
+                <div class="col">
+                    <div class="slider">
+                        <div>
+                            <blockquote class="blockquote">
+                                <p class="md-0">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, reprehenderit.
+                                </p>
+                                <footer class="blockquote-footer">John Doe From
+                                    <cite title="Company 1">Company 1</cite>
+                                </footer>
+                            </blockquote>
+                        </div>
+                        <div>
+                            <blockquote class="blockquote">
+                                <p class="md-0">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, reprehenderit.
+                                </p>
+                                <footer class="blockquote-footer">Sam Smith From
+                                    <cite title="Company 2">Company 2</cite>
+                                </footer>
+                            </blockquote>
+                        </div>
+                        <div>
+                            <blockquote class="blockquote">
+                                <p class="md-0">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, reprehenderit.
+                                </p>
+                                <footer class="blockquote-footer">Meghan Williams From
+                                    <cite title="Company 3">Company 3</cite>
+                                </footer>
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+<!--FOOTER-->
+<footer id="main-footer" class="text-center p-4">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <p>Copyright &copy; <span id="year"></span> Java Power</p>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+        integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js"
+        integrity="sha512-eP8DK17a+MOcKHXC5Yrqzd8WI5WKh6F1TIk5QZ/8Lbv+8ssblcz7oGC8ZmQ/ZSAPa7ZmsCU4e/hcovqR8jfJqA=="
+        crossorigin="anonymous"></script>
+<script>
+
+    //GEt the current year for the copyright
+    $('#year').text(new Date().getFullYear())
+
+    $('.slider').slick({
+        infinite: true,
+        slideToShow: 1,
+        slideToScroll: 1,
+    })
+</script>
+
+</body>
+</html>

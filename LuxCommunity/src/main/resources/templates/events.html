@@ -23,80 +23,103 @@
 
 </head>
 <body>
-<header class="closed">
-    <img src="search.webp" alt="search image" width="50" height="35">
-    <h1>Game of code 2021</h1>
-</header>
 
 <div id="menu-wrap">
+    <nav class="navbar navbar-expand-sm bg-light navbar-light fixed-top">
+        <div class="container">
+            <img src="search.webp" alt="search image" width="70" height="35">
+            <a href="/" class="navbar-brand">Game of code 2021</a>
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item active">
+                        <a href="/" class="nav-link">Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/about" class="nav-link">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/contact" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
     <section id="content">
-        <article id="home" class="active1" style="height: 888px;">
-            <div class="pageblock" id="fullscreen">
-                <div class="container">
-                    <div id="mapid"></div>
-                    <div id="text">
-                        <p class="ml-30">
-                            <h7><b>Information</b></h7>
-                            <br>
-                        <div id="id1" class="ml-30">
-                            <p>Digitised Luxembourg Historical Newspapers | Journaux Historiques Luxembourgeois
-                                Numérisés bnl-historical-newspapers</p>>
+        <div class="container">
+            <article id="home" class="active1" style="height: 888px;">
+                <div class="pageblock" id="fullscreen">
+                    <div class="container">
+                        <div id="mapid"></div>
+                        <div id="text">
+                            <p class="ml-30">
+                                <h7><b>Information</b></h7>
+                                <br>
+                            <div id="idGame of code 20211" class="ml-30">
+                                <p>Digitised Luxembourg Historical Newspapers | Journaux Historiques Luxembourgeois
+                                    Numérisés bnl-historical-newspapers</p>>
 
-                            <p>Since 2002, the BnL has been digitising a large variety of historical documents such as
-                                newspapers, monographs, manuscripts,
-                                postcards and even posters.</p>
+                                <p>Since 2002, the BnL has been digitising a large variety of historical documents such
+                                    as
+                                    newspapers, monographs, manuscripts,
+                                    postcards and even posters.</p>
 
-                            <p>Here you can find Historical Newspapers events in the map.</p>
+                                <p>Here you can find Historical Newspapers events in the map.</p>
 
+                            </div>
+                            </p>
                         </div>
-                        </p>
                     </div>
                 </div>
-            </div>
-        </article>
+            </article>
+        </div>
     </section>
     <section id="add-event">
-        <div class="card p-4">
-            <div class="card-body">
-                <h3 class="text-center">Please fill out this form to add event</h3>
-                <hr/>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Event Name">
+        <div class="container">
+            <div class="card p-4">
+                <div class="card-body">
+                    <h3 class="text-center">Please fill out this form to add event</h3>
+                    <hr/>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Event Name">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Date and Time">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="email" class="form-control" placeholder="Location">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Categories">
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Date and Time">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <textarea class="form-control" placeholder="Description"></textarea>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Location">
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Categories">
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <textarea class="form-control" placeholder="Description"></textarea>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="form-group">
-                            <input type="submit" value="Submit" class="btn btn-outline-danger w-100">
+                        <div class="col">
+                            <div class="form-group">
+                                <input type="submit" value="Submit" class="btn btn-outline-danger w-100">
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
     </section>
     <script>
 
@@ -131,6 +154,14 @@
         }
 
     </script>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+            integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+            crossorigin="anonymous"></script>
 
 </div>
 </body>

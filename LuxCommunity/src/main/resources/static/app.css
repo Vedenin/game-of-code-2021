@@ -99,3 +99,10 @@ h1 {
 .py-100{
     padding-top: 100px !important;
 }
+
+#page-header {
+    height: 200px;
+    color: #fff !important;
+    border-bottom: 1px #eee solid;
+    padding-top: 50px;
+}

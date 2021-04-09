@@ -26,4 +26,5 @@ eu/gameofcode/endgame/security/WebSecurityConfig.class
 eu/gameofcode/endgame/repository/TripRepository.class
 eu/gameofcode/endgame/controllers/HeatbeatController.class
 eu/gameofcode/endgame/service/FileReader.class
+eu/gameofcode/endgame/controllers/EventController.class
 eu/gameofcode/endgame/dto/HotelDto.class

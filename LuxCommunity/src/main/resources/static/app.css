@@ -106,3 +106,7 @@ h1 {
     border-bottom: 1px #eee solid;
     padding-top: 50px;
 }
+
+.about-img {
+    margin-top: -50px;
+}

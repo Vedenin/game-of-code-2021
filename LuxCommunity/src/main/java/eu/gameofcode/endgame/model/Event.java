@@ -2,6 +2,7 @@ package eu.gameofcode.endgame.model;
 
 public class Event {
 
+    private Integer id;
     private String latitude;
     private String longitude;
     private String name;
@@ -11,6 +12,13 @@ public class Event {
     private boolean isOnline;
     private String urlEvent;
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getLongitude() {
         return longitude;

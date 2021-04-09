@@ -41,11 +41,12 @@ public class EventService {
 
     public EventDto fromModel(Event event) {
         EventDto dto = new EventDto();
+        dto.setId(event.getId());
         dto.setLatitude(event.getLatitude());
         dto.setLongitude(event.getLongitude());
         dto.setName(event.getName());
         dto.setDescription(event.getDescription());
-
+        dto.setOnline(event.isOnline());
         Date  date = new Date(event.getEventTime());
 
         dto.setEventTime(new SimpleDateFormat("dd/MM/yyyy hh:mm").format(date));
@@ -55,10 +56,12 @@ public class EventService {
 
     public Event fromDto(EventDto dto) {
         Event event = new Event();
+        event.setId(dto.getId());
         event.setLatitude(dto.getLatitude());
         event.setLongitude(dto.getLongitude());
         event.setName(dto.getName());
         event.setDescription(dto.getDescription());
+        event.setOnline(dto.isOnline());
         Long ms = 0l;
         try {
              ms = new SimpleDateFormat("dd/MM/yyyy hh:mm").parse(dto.getEventTime()).getTime();
@@ -73,7 +76,7 @@ public class EventService {
 
     @PostConstruct
     public void init() {
-        EventDto dto1 = new EventDto();
+        Event dto1 = new Event();
         dto1.setId(1);
         dto1.setLatitude("49.617844812170986");
         dto1.setLongitude("6.1404697460290985");
@@ -82,7 +85,7 @@ public class EventService {
         dto1.setEventTime(1618999951239l);
         dto1.setOnline(false);
 
-        EventDto dto2 = new EventDto();
+        Event dto2 = new Event();
         dto2.setId(2);
         dto2.setLatitude("49.517844812170986");
         dto2.setLongitude("6.2404697460290985");
@@ -91,7 +94,7 @@ public class EventService {
         dto2.setEventTime(1618999951239l);
         dto2.setOnline(false);
 
-        EventDto dto3 = new EventDto();
+        Event dto3 = new Event();
         dto3.setId(3);
         dto3.setLatitude("49.717844812170986");
         dto3.setLongitude("6.0404697460290985");
@@ -100,8 +103,8 @@ public class EventService {
         dto3.setEventTime(1618999951239l);
         dto3.setOnline(false);
 
-        eventDtos.add(dto1);
-        eventDtos.add(dto2);
-        eventDtos.add(dto3);
+        events.add(dto1);
+        events.add(dto2);
+        events.add(dto3);
     }
 }

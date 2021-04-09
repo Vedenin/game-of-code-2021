@@ -47,27 +47,75 @@
             </div>
         </div>
     </nav>
-
-    <section id="content">
+    <section id="filters">
         <div class="container">
-            <article id="home" class="active1" style="height: 888px;">
-                <div class="pageblock" id="fullscreen">
-                    <div class="container">
-                        <div id="mapid"></div>
-                        <div id="event-description" class="card">
-                            <p class="ml-30">
-                            <div class="card-header">
-                                <h4>Event Information</h4>
+            <div class="card-body">
+                <row>
+                    <h3 class="text-center">Filter throw our events!</h3>
+                </row>
+                <hr/>
+                <div class="row">
+                    <div class="col-md-6 ml-auto">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search Categories...">
+                            <div class="input-group-append">
+                                <button class="btn btn-success">Search</button>
                             </div>
-                            <div class="card-body">
-                                <div id="id1" class="ml-30">
-                                </div>
-                            </div>
-                            </p>
                         </div>
                     </div>
                 </div>
-            </article>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Event Name">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Date and Time">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Location">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Categories">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <input type="submit" value="Submit" class="btn btn-outline-danger w-100">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="content" class="py-2 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div id="mapid"></div>
+                </div>
+                <div class="col-md-6">
+                    <div id="event-description" class="card">
+                        <p class="ml-30">
+                        <div class="card-header">
+                            <h4>Event Information</h4>
+                        </div>
+                        <div class="card-body">
+                            <div id="id1" class="ml-30">
+                            </div>
+                        </div>
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
     <section id="add-event">
@@ -114,6 +162,16 @@
             </div>
         </div>
     </section>
+    <!--FOOTER-->
+    <footer id="main-footer" class="text-center p-4">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <p>Copyright &copy; <span id="year">2021</span> Java Power</p>
+                </div>
+            </div>
+        </div>
+    </footer>
     <script th:inline="javascript">
         /*<![CDATA[*/
         var mymap = L.map('mapid').setView([49.611, 6.13], 9);
@@ -136,15 +194,15 @@
                 change("<p ><b> Name:</b>  <b id=\"name\"></b>" + obj.name + "</p>" +
                     "<p><b> Description:</b> " + obj.description + "</p>" +
                     "<p><b> Date:</b> " + obj.eventTime + "</p>"
-                + "<h1 class=\"text-center\">Photo Gallery</h1>\n" +
-                "<div class=\"row mb-4\">\n" +
+                    + "<h1 class=\"text-center\">Photo Gallery</h1>\n" +
+                    "<div class=\"row mb-4\">\n" +
                     "            <div class=\"col-md-4\">\n" +
                     "                <a href=\"http://source.unsplash.com/random/160x160\"\n" +
                     "                   data-toggle=\"lightbox\"\n" +
                     "                   data-gallery=\"img-gallery\"\n" +
                     "                   data-height=\"160\"\n" +
                     "                   data-width=\"160\">\n" +
-                    "                    <img src=\"http://source.unsplash.com/random/160x160?" + obj.name +"\" alt=\"image\" class=\"img-fluid\">\n" +
+                    "                    <img src=\"http://source.unsplash.com/random/160x160?" + obj.name + "\" alt=\"image\" class=\"img-fluid\">\n" +
                     "                </a>\n" +
                     "            </div>\n" +
                     "            <div class=\"col-md-4\">\n" +
@@ -153,7 +211,7 @@
                     "                   data-gallery=\"img-gallery\"\n" +
                     "                   data-height=\"161\"\n" +
                     "                   data-width=\"161\">\n" +
-                    "                    <img src=\"http://source.unsplash.com/random/161x161?" + obj.name +"\" alt=\"image\" class=\"img-fluid\">\n" +
+                    "                    <img src=\"http://source.unsplash.com/random/161x161?" + obj.name + "\" alt=\"image\" class=\"img-fluid\">\n" +
                     "                </a>\n" +
                     "            </div>\n" +
                     "            <div class=\"col-md-4\">\n" +
@@ -162,7 +220,7 @@
                     "                   data-gallery=\"img-gallery\"\n" +
                     "                   data-height=\"162\"\n" +
                     "                   data-width=\"162\">\n" +
-                    "                    <img src=\"http://source.unsplash.com/random/162x162?" + obj.name +"\" alt=\"image\" class=\"img-fluid\">\n" +
+                    "                    <img src=\"http://source.unsplash.com/random/162x162?" + obj.name + "\" alt=\"image\" class=\"img-fluid\">\n" +
                     "                </a>\n" +
                     "            </div>\n" +
                     "        </div>\n" +
@@ -173,7 +231,7 @@
                     "                   data-gallery=\"img-gallery\"\n" +
                     "                   data-height=\"163\"\n" +
                     "                   data-width=\"163\">\n" +
-                    "                    <img src=\"http://source.unsplash.com/random/163x163?" + obj.name +"\" alt=\"image\" class=\"img-fluid\">\n" +
+                    "                    <img src=\"http://source.unsplash.com/random/163x163?" + obj.name + "\" alt=\"image\" class=\"img-fluid\">\n" +
                     "                </a>\n" +
                     "            </div>\n" +
                     "            <div class=\"col-md-4\">\n" +
@@ -182,7 +240,7 @@
                     "                   data-gallery=\"img-gallery\"\n" +
                     "                   data-height=\"164\"\n" +
                     "                   data-width=\"164\">\n" +
-                    "                    <img src=\"http://source.unsplash.com/random/164x164?" + obj.name +"\" alt=\"image\" class=\"img-fluid\">\n" +
+                    "                    <img src=\"http://source.unsplash.com/random/164x164?" + obj.name + "\" alt=\"image\" class=\"img-fluid\">\n" +
                     "                </a>\n" +
                     "            </div>\n" +
                     "            <div class=\"col-md-4\">\n" +
@@ -191,7 +249,7 @@
                     "                   data-gallery=\"img-gallery\"\n" +
                     "                   data-height=\"165\"\n" +
                     "                   data-width=\"165\">\n" +
-                    "                    <img src=\"http://source.unsplash.com/random/165x165?" + obj.name +"\" alt=\"image\" class=\"img-fluid\">\n" +
+                    "                    <img src=\"http://source.unsplash.com/random/165x165?" + obj.name + "\" alt=\"image\" class=\"img-fluid\">\n" +
                     "                </a>\n" +
                     "            </div>\n" +
                     "        </div>\n");

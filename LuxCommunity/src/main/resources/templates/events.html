@@ -47,14 +47,24 @@
             </div>
         </div>
     </nav>
+    <header id="page-header" th:style="'background: url(/img/bg.jpg) fixed 0 -300px;'">
+        <div class="container py-2">
+            <div class="row">
+                <div class="col-md-6 m-auto text-center">
+                    <p class="text-white display-4">All Luxembourg's Events in one place</p>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </header>
+
     <section id="filters">
         <div class="container">
             <div class="card-body">
-                <row>
-                    <h3 class="text-center">Filter throw our events!</h3>
-                </row>
-                <hr/>
                 <div class="row">
+                    <div class="col">
+                        <h4>Filter throw our events!</h4>
+                    </div>
                     <div class="col-md-6 ml-auto">
                         <div class="input-group">
                             <input type="text" class="form-control" placeholder="Key Word...">

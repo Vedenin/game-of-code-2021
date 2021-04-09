@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>Game of Code 2021</title>
+
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+          integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+          crossorigin=""/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+          integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+          integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+          crossorigin="anonymous">
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+            integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+            crossorigin=""></script>
+    <link th:href="@{/app.css}" rel="stylesheet"/>
+
+</head>
+<body>
+<header class="closed">
+    <img src="search.webp" alt="search image" width="50" height="35">
+    <h1>Game of code 2021</h1>
+</header>
+
+<div id="menu-wrap">
+    <section id="content">
+        <article id="home" class="active1" style="height: 888px;">
+            <div class="pageblock" id="fullscreen">
+                <div class="container">
+                    <div id="mapid"></div>
+                    <div id="text">
+                        <p class="ml-30">
+                            <h7><b>Information</b></h7>
+                            <br>
+                        <div id="id1" class="ml-30">
+                            <p>Digitised Luxembourg Historical Newspapers | Journaux Historiques Luxembourgeois
+                                Numérisés bnl-historical-newspapers</p>>
+
+                            <p>Since 2002, the BnL has been digitising a large variety of historical documents such as
+                                newspapers, monographs, manuscripts,
+                                postcards and even posters.</p>
+
+                            <p>Here you can find Historical Newspapers events in the map.</p>
+
+                        </div>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </section>
+    <section id="add-event">
+        <div class="card p-4">
+            <div class="card-body">
+                <h3 class="text-center">Please fill out this form to add event</h3>
+                <hr/>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Event Name">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Date and Time">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Location">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Categories">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <textarea class="form-control" placeholder="Description"></textarea>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <input type="submit" value="Submit" class="btn btn-outline-danger w-100">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <script th:inline="javascript">
+
+        /*<![CDATA[*/
+
+        var mymap = L.map('mapid').setView([49.611, 6.13], 13);
+
+        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+            attribution: '© <a href="https://www.mapbox.com/about/maps/">Mapbox</a> © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> <strong><a href="https://www.mapbox.com/map-feedback/" target="_blank">Improve this map</a></strong>',
+            tileSize: 512,
+            maxZoom: 18,
+            zoomOffset: -1,
+            id: 'mapbox/streets-v11',
+            accessToken: 'pk.eyJ1IjoidmVkZW5pbjE5ODAiLCJhIjoiY2tuOTkyNTkyMGhvbzJ3cGRjbXA2djR2ZSJ9.MhYaxggSKZ0APuZgEoS2Qg'
+        }).addTo(mymap);
+
+
+
+        var events = [[${eventsDto}]];
+
+
+        for (var key in events) {
+            var obj = events[key];
+
+
+            L.marker([obj.latitude, obj.longitude]).on('click', function (e) {
+                change("<p ><b> Name:</b>  <b id=\"eventName\"></b></p>" +
+                    "<p><b> Description:</b> <b id=\"eventDescription\"></b></p>" +
+                    "<p><b> Date:</b> <b id=\"eventDate\"></b></p>");
+
+                document.getElementById("eventName").innerHTML = obj.name;
+                document.getElementById("eventDescription").innerHTML = obj.description;
+                document.getElementById("eventDate").innerHTML = obj.eventTime;
+            }).addTo(mymap).bindPopup(obj.name).openPopup();
+
+        }
+
+
+
+        var popup = L.popup();
+
+        function change(t) {
+            document.getElementById("id1").innerHTML = t
+        }
+
+        /*]]>*/
+    </script>
+
+</div>
+</body>
+</html>

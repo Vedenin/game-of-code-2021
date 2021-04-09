@@ -1,14 +1,12 @@
-package eu.gameofcode.endgame.dto;
+package eu.gameofcode.endgame.model;
 
-import java.util.Date;
-
-public class EventDto {
+public class Event {
 
     private String latitude;
     private String longitude;
     private String name;
     private String description;
-    private String eventTime;
+    private long eventTime;
     private int participantMinAge;
     private boolean isOnline;
     private String urlEvent;
@@ -46,11 +44,11 @@ public class EventDto {
         this.description = description;
     }
 
-    public String getEventTime() {
+    public long getEventTime() {
         return eventTime;
     }
 
-    public void setEventTime(String eventTime) {
+    public void setEventTime(long eventTime) {
         this.eventTime = eventTime;
     }
 

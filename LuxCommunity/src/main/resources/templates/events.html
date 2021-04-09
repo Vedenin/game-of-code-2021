@@ -58,17 +58,7 @@
                             <p class="ml-30">
                                 <h7><b>Information</b></h7>
                                 <br>
-                            <div id="idGame of code 20211" class="ml-30">
-                                <p>Digitised Luxembourg Historical Newspapers | Journaux Historiques Luxembourgeois
-                                    Numérisés bnl-historical-newspapers</p>>
-
-                                <p>Since 2002, the BnL has been digitising a large variety of historical documents such
-                                    as
-                                    newspapers, monographs, manuscripts,
-                                    postcards and even posters.</p>
-
-                                <p>Here you can find Historical Newspapers events in the map.</p>
-
+                            <div id="id1" class="ml-30">
                             </div>
                             </p>
                         </div>
@@ -137,27 +127,25 @@
         var events = [[${eventsDto}]];
 
         for (var key in events) {
-            var obj = events[key];
-
+            let obj = events[key];
 
             L.marker([obj.latitude, obj.longitude]).on('click', function (e) {
-                change("<p ><b> Name:</b>  <b id=\"eventName\"></b></p>" +
-                    "<p><b> Description:</b> <b id=\"eventDescription\"></b>/p>" +
-                    "<p><b> Date:</b> <b id=\"eventDate\"></b></p>");
-
-                document.getElementById("eventName").innerHTML = obj.name;
-                document.getElementById("eventDescription").innerHTML = obj.description;
-                document.getElementById("eventDate").innerHTML = obj.eventTime;
+                change("<p ><b> Name:</b>  <b id=\"name\"></b>" + obj.name + "</p>" +
+                    "<p><b> Description:</b> " + obj.description + "</p>" +
+                    "<p><b> Date:</b> " + obj.eventTime + "</p>");
             }).addTo(mymap).bindPopup(obj.name).openPopup();
         }
 
         var popup = L.popup();
+
         function change(t) {
             document.getElementById("id1").innerHTML = t
         }
+
         /*]]>*/
     </script>
-    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
             crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
             integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"

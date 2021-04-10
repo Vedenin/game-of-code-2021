@@ -1,6 +1,7 @@
 package eu.gameofcode.endgame.service;
 
 import eu.gameofcode.endgame.dto.EventDto;
+import eu.gameofcode.endgame.dto.FilterDto;
 import eu.gameofcode.endgame.model.Event;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -11,6 +12,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 import java.util.stream.Collectors;
 
 @Service
@@ -39,6 +41,34 @@ public class EventService {
     }
 
 
+    public Object getWithFilter(FilterDto filterDto) {
+        List<String> categories = new ArrayList<>();
+        if (filterDto.isFamily()) {
+            categories.add("family");
+        }
+        if (filterDto.isSport()) {
+            categories.add("sport");
+        }
+        if (filterDto.isCinema()) {
+            categories.add("cinema");
+        }
+        if (filterDto.isKids()) {
+            categories.add("kids");
+        }
+        if (filterDto.isExhibition()) {
+            categories.add("exhibition");
+        }
+        if (filterDto.isCulture()) {
+            categories.add("culture");
+        }
+        List<EventDto> eventDtos = events.stream()
+                .filter(event -> (categories.contains(event.getCategory().toLowerCase(Locale.ROOT))))
+                .map(this::fromModel)
+                .collect(Collectors.toList());
+
+        return eventDtos;
+    }
+
     public EventDto fromModel(Event event) {
         EventDto dto = new EventDto();
         dto.setId(event.getId());
@@ -48,7 +78,7 @@ public class EventService {
         dto.setCategory(event.getCategory());
         dto.setDescription(event.getDescription());
         dto.setOnline(event.isOnline());
-        Date  date = new Date(event.getEventTime());
+        Date date = new Date(event.getEventTime());
 
         dto.setEventTime(new SimpleDateFormat("dd/MM/yyyy hh:mm").format(date));
 
@@ -66,7 +96,7 @@ public class EventService {
         event.setOnline(dto.isOnline());
         Long ms = 0l;
         try {
-             ms = new SimpleDateFormat("dd/MM/yyyy hh:mm").parse(dto.getEventTime()).getTime();
+            ms = new SimpleDateFormat("dd/MM/yyyy hh:mm").parse(dto.getEventTime()).getTime();
         } catch (ParseException e) {
             e.printStackTrace();
         }

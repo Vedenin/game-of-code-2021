@@ -1,10 +1,13 @@
 package eu.gameofcode.endgame.controllers;
 
 import eu.gameofcode.endgame.dto.EventDto;
+import eu.gameofcode.endgame.dto.FilterDto;
 import eu.gameofcode.endgame.service.EventService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Objects;
 
 @Controller
 @RequestMapping("/")
@@ -12,13 +15,17 @@ public class EventController {
 
     private final EventService eventService;
 
+    private FilterDto filter = new FilterDto();
+
     public EventController(EventService eventService) {
         this.eventService = eventService;
     }
 
     @GetMapping
     public String getAll(Model model) {
-        model.addAttribute("eventsDto", eventService.findAll());
+//        model.addAttribute("eventsDto", eventService.findAll());
+        model.addAttribute("filter", filter);
+        model.addAttribute("eventsDto", eventService.getWithFilter(filter));
         return "events";
     }
 
@@ -29,9 +36,9 @@ public class EventController {
         return "events";
     }
 
-    @GetMapping("/filter")
-    public String getWithFilter(Model model, @RequestParam String keyword, @RequestParam Long to, @RequestParam Long from) {
-        model.addAttribute("eventsDto", eventService.getWithFilter(keyword, to, from));
-        return "events";
+    @PostMapping("/filter")
+    public String getWithFilter(Model model, FilterDto filterDto) {
+        this.filter = filterDto;
+        return "redirect:/";
     }
 }

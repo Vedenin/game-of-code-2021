@@ -63,7 +63,8 @@
 
     <section id="filters">
         <div class="container">
-            <div class="card-body">
+            <form class="container" method="POST" action="http://localhost:18081/filter"  th:object="${filter}">
+                <div class="card-body">
                 <div class="row">
                     <div class="col">
                         <h4>Filter throw our events!</h4>
@@ -72,7 +73,7 @@
                         <div class="input-group">
                             <input type="text" class="form-control" placeholder="Key Word...">
                             <div class="input-group-append">
-                                <button class="btn btn-success">Search</button>
+                                <button class="btn btn-success" type="submit">Search</button>
                             </div>
                         </div>
                     </div>
@@ -84,19 +85,19 @@
                             <div class="card-body">
                                 <div class="form-group float-left">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="family" checked>
+                                        <input class="form-check-input" type="checkbox" id="family" name="family" th:field="*{family}" onChange="this.form.submit()"/>
                                         <label class="form-check-label" for="family">
                                             Family
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="sport" checked>
+                                        <input class="form-check-input" type="checkbox" id="sport"  name="sport" th:field="*{sport}" onChange="this.form.submit()"/>
                                         <label class="form-check-label" for="sport">
                                             Sport
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="cinema" checked>
+                                        <input class="form-check-input" type="checkbox" id="cinema"  name="cinema" th:field="*{cinema}" onChange="this.form.submit()"/>
                                         <label class="form-check-label" for="cinema">
                                             Cinema
                                         </label>
@@ -104,19 +105,19 @@
                                 </div>
                                 <div class="form-group float-right">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="kids" checked>
+                                        <input class="form-check-input" type="checkbox" id="kids"  name="kids" th:field="*{kids}" onChange="this.form.submit()"/>
                                         <label class="form-check-label" for="kids">
                                             Kids
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="exhibition" checked>
+                                        <input class="form-check-input" type="checkbox" id="exhibition"  name="exhibition" th:field="*{exhibition}" onChange="this.form.submit()"/>
                                         <label class="form-check-label" for="exhibition">
                                             Exhibition
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="culture" checked>
+                                        <input class="form-check-input" type="checkbox" id="culture"  name="culture" th:field="*{culture}" onChange="this.form.submit()"/>
                                         <label class="form-check-label" for="culture">
                                             Culture
                                         </label>
@@ -155,6 +156,7 @@
                     </div>
                 </div>
             </div>
+            </form>
         </div>
     </section>
     <section id="content" class="py-2 bg-light">

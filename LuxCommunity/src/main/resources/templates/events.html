@@ -298,6 +298,15 @@
         }
 
         mymap.on('click', function (e) {
+            var addr = '';
+            // var key = '59fcaf2af1a844219d7a26af38309db7'
+            //
+            // var request = new XMLHttpRequest();
+            // request.open('GET', 'https://api.opencagedata.com/geocode/v1/json?key=' + key + '&q='+ e.latlng.lat + '%2C+' + e.latlng.lng + '&pretty=1&no_annotations=1', false);  // `false` makes the request synchronous
+            // request.send(null);
+            //
+            // addr = JSON.parse(request.responseText).results[0].formatted;
+
             change('<form class="container" method="POST" action="http://localhost:18081/" th:with="eventDto=${new EventDto()}">' +
             '<div class="card p-4">' +
                 '<div class="card-body">' +
@@ -316,7 +325,7 @@
                         '</div>' +
                         '<div class="col-md-6">' +
                             '<div class="form-group">' +
-                                '<input type="text" class="form-control" placeholder="Address" name="address">' +
+                                '<input type="text" class="form-control" placeholder="Address" name="address" value="'+ addr.toString() + '">' +
                                 '<input type="text" class="form-control" placeholder="Lat" name="latitude" value="'+ e.latlng.lat + '" readonly hidden>' +
                                 '<input type="text" class="form-control" placeholder="Lng" name="longitude" value="'+ e.latlng.lng +'" readonly hidden>' +
                             '</div>' +

@@ -176,50 +176,6 @@
             </div>
         </div>
     </section>
-    <section id="add-event">
-        <div class="container">
-            <div class="card p-4">
-                <div class="card-body">
-                    <h3 class="text-center">Please fill out this form to add event</h3>
-                    <hr/>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Event Name">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Date and Time">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input type="email" class="form-control" placeholder="Location">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Categories">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <textarea class="form-control" placeholder="Description"></textarea>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="form-group">
-                                <input type="submit" value="Submit" class="btn btn-outline-danger w-100">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
     <!--FOOTER-->
     <footer id="main-footer" class="text-center p-4">
         <div class="container">
@@ -321,7 +277,52 @@
         }
 
         mymap.on('click', function (e) {
-            alert("lat = " + e.latlng.lat + ", lng = " + e.latlng.lng);
+            change('<form class="container" method="POST" action="http://localhost:18081/" th:with="eventDto=${new EventDto()}">' +
+            '<div class="card p-4">' +
+                '<div class="card-body">' +
+                    '<h3 class="text-center">Please fill out this form to add event</h3>' +
+                    '<hr/>' +
+                    '<div class="row">' +
+                        '<div class="col-md-6">' +
+                            '<div class="form-group">' +
+                                '<input type="text" class="form-control" placeholder="Event Name" name="name" required>' +
+                            '</div>' +
+                        '</div>' +
+                        '<div class="col-md-6">' +
+                            '<div class="form-group">' +
+                                '<input type="text" class="form-control" placeholder="Date and Time" name="eventTime" required>' +
+                            '</div>' +
+                        '</div>' +
+                        '<div class="col-md-6">' +
+                            '<div class="form-group">' +
+                                '<input type="text" class="form-control" placeholder="Address" name="address">' +
+                                '<input type="text" class="form-control" placeholder="Lat" name="latitude" value="'+ e.latlng.lat + '" readonly hidden>' +
+                                '<input type="text" class="form-control" placeholder="Lng" name="longitude" value="'+ e.latlng.lng +'" readonly hidden>' +
+                            '</div>' +
+                        '</div>' +
+
+                        '<div class="col-md-6">' +
+                            '<div class="form-group">' +
+                                '<input type="text" class="form-control" placeholder="Category" name="category">' +
+                            '</div>' +
+                        '</div>' +
+                    '</div>' +
+                    '<div class="row">' +
+                        '<div class="col-md-12">' +
+                            '<div class="form-group">' +
+                                '<textarea class="form-control" placeholder="Description" name="description" required></textarea>' +
+                            '</div>' +
+                        '</div>' +
+                        '<div class="col">' +
+                            '<div class="form-group">' +
+                                '<input type="submit" value="Submit" class="btn btn-outline-danger w-100">' +
+                            '</div>' +
+                        '</div>' +
+                    '</div>' +
+                '</div>' +
+            '</div>' +
+                '</form>' +
+    '</section>');
         });
         /*]]>*/
     </script>

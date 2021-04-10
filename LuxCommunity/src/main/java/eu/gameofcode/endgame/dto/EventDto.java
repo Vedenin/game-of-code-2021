@@ -9,6 +9,8 @@ public class EventDto {
     private String longitude;
     private String name;
     private String description;
+    private String address;
+    private String category;
     private String eventTime;
     private int participantMinAge;
     private boolean isOnline;
@@ -52,6 +54,22 @@ public class EventDto {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public String getEventTime() {

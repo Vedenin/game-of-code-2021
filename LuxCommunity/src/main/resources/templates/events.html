@@ -73,7 +73,7 @@
                         <div class="input-group">
                             <input type="text" class="form-control" placeholder="Key Word..." th:field="*{keyword}">
                             <div class="input-group-append">
-                                <button class="btn btn-success" type="submit">Search</button>
+                                <button class="btn btn-outline-danger" type="submit">Search</button>
                             </div>
                         </div>
                     </div>
@@ -126,9 +126,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <div class="card">
-                            <div class="card-header">Free or not</div>
+                            <div class="card-header">Free or Paid</div>
                             <div class="card-body">
                                 <div class="form-group">
                                     <div class="form-check">
@@ -147,22 +147,24 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-5">
                         <div class="card">
                             <div class="card-header">Event Date</div>
                             <div class="card-body">
                                 <div class="form-group">
-                                    <div class="form-date">
+                                    <div class="form-date form-inline">
                                         <label class="form-date-label" for="fromDate">
-                                            From
+                                            From:
                                         </label>
-                                        <input class="form-date-input" type="datetime-local"  id="fromDate"  th:field="*{from}" onChange="this.form.submit()"/>
+                                        <input class="ml-auto form-control form-date-input" type="datetime-local"  id="fromDate"  th:field="*{from}" onChange="this.form.submit()"/>
                                     </div>
-                                    <div class="form-date">
+                                </div>
+                                <div class="form-group">
+                                    <div class="form-date form-inline">
                                         <label class="form-date-label" for="toDate">
-                                            To
+                                            To:
                                         </label>
-                                        <input class="form-date-input" type="datetime-local"  id="toDate" th:field="*{to}" onChange="this.form.submit()"/>
+                                        <input class="ml-auto form-control form-date-input" type="datetime-local"  id="toDate" th:field="*{to}" onChange="this.form.submit()"/>
                                     </div>
                                 </div>
                             </div>

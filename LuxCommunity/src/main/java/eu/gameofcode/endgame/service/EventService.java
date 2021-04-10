@@ -45,6 +45,7 @@ public class EventService {
         dto.setLatitude(event.getLatitude());
         dto.setLongitude(event.getLongitude());
         dto.setName(event.getName());
+        dto.setCategory(event.getCategory());
         dto.setDescription(event.getDescription());
         dto.setOnline(event.isOnline());
         Date  date = new Date(event.getEventTime());
@@ -60,6 +61,7 @@ public class EventService {
         event.setLatitude(dto.getLatitude());
         event.setLongitude(dto.getLongitude());
         event.setName(dto.getName());
+        event.setCategory(dto.getCategory());
         event.setDescription(dto.getDescription());
         event.setOnline(dto.isOnline());
         Long ms = 0l;
@@ -80,8 +82,9 @@ public class EventService {
         dto1.setId(1);
         dto1.setLatitude("49.617844812170986");
         dto1.setLongitude("6.1404697460290985");
-        dto1.setName("Art exhibition 1");
-        dto1.setDescription("Art exhibition 1");
+        dto1.setName("Art exhibition");
+        dto1.setCategory("Exhibition");
+        dto1.setDescription("Art exhibition");
         dto1.setEventTime(1618999951239l);
         dto1.setOnline(false);
 
@@ -89,8 +92,9 @@ public class EventService {
         dto2.setId(2);
         dto2.setLatitude("49.517844812170986");
         dto2.setLongitude("6.2404697460290985");
-        dto2.setName("Art exhibition 2");
-        dto2.setDescription("Art exhibition 2");
+        dto2.setName("Family Dance Class");
+        dto2.setCategory("Family");
+        dto2.setDescription("Family Dance Class");
         dto2.setEventTime(1618999951239l);
         dto2.setOnline(false);
 
@@ -98,8 +102,9 @@ public class EventService {
         dto3.setId(3);
         dto3.setLatitude("49.717844812170986");
         dto3.setLongitude("6.0404697460290985");
-        dto3.setName("Art exhibition 3");
-        dto3.setDescription("Art exhibition 3");
+        dto3.setName("Football match");
+        dto3.setCategory("Sport");
+        dto3.setDescription("Local teams football match");
         dto3.setEventTime(1618999951239l);
         dto3.setOnline(false);
 

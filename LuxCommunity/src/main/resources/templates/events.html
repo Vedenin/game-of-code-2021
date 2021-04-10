@@ -37,7 +37,7 @@
                     <li class="nav-item active">
                         <a href="/" class="nav-link">Events</a>
                     </li>
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a href="/supermarkets" class="nav-link">Supermarkets</a>
                     </li>
                     <li class="nav-item">
@@ -210,6 +210,7 @@
             L.marker([obj.latitude, obj.longitude]).on('click', function (e) {
                 change("<p ><b> Name:</b>  <b id=\"name\"></b>" + obj.name + "</p>" +
                     "<p><b> Description:</b> " + obj.description + "</p>" +
+                    "<p><b> Category:</b> " + obj.category + "</p>" +
                     "<p><b> Date:</b> " + obj.eventTime + "</p>"
                     + "<h1 class=\"text-center\">Photo Gallery</h1>\n" +
                     "<div class=\"row mb-4\">\n" +
@@ -219,7 +220,7 @@
                     "                   data-gallery=\"img-gallery\"\n" +
                     "                   data-height=\"160\"\n" +
                     "                   data-width=\"160\">\n" +
-                    "                    <img src=\"http://source.unsplash.com/random/160x160?" + obj.name + "\" alt=\"image\" class=\"img-fluid\">\n" +
+                    "                    <img src=\"http://source.unsplash.com/random/160x160?" + obj.category + "\" alt=\"image\" class=\"img-fluid\">\n" +
                     "                </a>\n" +
                     "            </div>\n" +
                     "            <div class=\"col-md-4\">\n" +
@@ -228,7 +229,7 @@
                     "                   data-gallery=\"img-gallery\"\n" +
                     "                   data-height=\"161\"\n" +
                     "                   data-width=\"161\">\n" +
-                    "                    <img src=\"http://source.unsplash.com/random/161x161?" + obj.name + "\" alt=\"image\" class=\"img-fluid\">\n" +
+                    "                    <img src=\"http://source.unsplash.com/random/161x161?" + obj.category + "\" alt=\"image\" class=\"img-fluid\">\n" +
                     "                </a>\n" +
                     "            </div>\n" +
                     "            <div class=\"col-md-4\">\n" +
@@ -237,7 +238,7 @@
                     "                   data-gallery=\"img-gallery\"\n" +
                     "                   data-height=\"162\"\n" +
                     "                   data-width=\"162\">\n" +
-                    "                    <img src=\"http://source.unsplash.com/random/162x162?" + obj.name + "\" alt=\"image\" class=\"img-fluid\">\n" +
+                    "                    <img src=\"http://source.unsplash.com/random/162x162?" + obj.category + "\" alt=\"image\" class=\"img-fluid\">\n" +
                     "                </a>\n" +
                     "            </div>\n" +
                     "        </div>\n" +
@@ -248,7 +249,7 @@
                     "                   data-gallery=\"img-gallery\"\n" +
                     "                   data-height=\"163\"\n" +
                     "                   data-width=\"163\">\n" +
-                    "                    <img src=\"http://source.unsplash.com/random/163x163?" + obj.name + "\" alt=\"image\" class=\"img-fluid\">\n" +
+                    "                    <img src=\"http://source.unsplash.com/random/163x163?" + obj.category + "\" alt=\"image\" class=\"img-fluid\">\n" +
                     "                </a>\n" +
                     "            </div>\n" +
                     "            <div class=\"col-md-4\">\n" +
@@ -257,7 +258,7 @@
                     "                   data-gallery=\"img-gallery\"\n" +
                     "                   data-height=\"164\"\n" +
                     "                   data-width=\"164\">\n" +
-                    "                    <img src=\"http://source.unsplash.com/random/164x164?" + obj.name + "\" alt=\"image\" class=\"img-fluid\">\n" +
+                    "                    <img src=\"http://source.unsplash.com/random/164x164?" + obj.category + "\" alt=\"image\" class=\"img-fluid\">\n" +
                     "                </a>\n" +
                     "            </div>\n" +
                     "            <div class=\"col-md-4\">\n" +
@@ -266,7 +267,7 @@
                     "                   data-gallery=\"img-gallery\"\n" +
                     "                   data-height=\"165\"\n" +
                     "                   data-width=\"165\">\n" +
-                    "                    <img src=\"http://source.unsplash.com/random/165x165?" + obj.name + "\" alt=\"image\" class=\"img-fluid\">\n" +
+                    "                    <img src=\"http://source.unsplash.com/random/165x165?" + obj.category + "\" alt=\"image\" class=\"img-fluid\">\n" +
                     "                </a>\n" +
                     "            </div>\n" +
                     "        </div>\n");

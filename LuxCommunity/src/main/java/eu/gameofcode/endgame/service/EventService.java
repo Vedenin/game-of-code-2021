@@ -61,8 +61,10 @@ public class EventService {
         if (filterDto.isCulture()) {
             categories.add("culture");
         }
+
         List<EventDto> eventDtos = events.stream()
-                .filter(event -> (categories.contains(event.getCategory().toLowerCase(Locale.ROOT))))
+                .filter(event -> (categories.contains(event.getCategory().toLowerCase(Locale.ROOT)))
+                && ((filterDto.isFree()) && filterDto.isPaid()) || (filterDto.isFree() && event.isFree()) || (filterDto.isPaid() && !event.isFree()))
                 .map(this::fromModel)
                 .collect(Collectors.toList());
 
@@ -117,6 +119,7 @@ public class EventService {
         dto1.setDescription("Art exhibition");
         dto1.setEventTime(1618999951239l);
         dto1.setOnline(false);
+        dto1.setFree(false);
 
         Event dto2 = new Event();
         dto2.setId(2);
@@ -127,6 +130,7 @@ public class EventService {
         dto2.setDescription("Family Dance Class");
         dto2.setEventTime(1618999951239l);
         dto2.setOnline(false);
+        dto2.setFree(true);
 
         Event dto3 = new Event();
         dto3.setId(3);

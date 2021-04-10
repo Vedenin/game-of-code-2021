@@ -11,6 +11,7 @@ public class Event {
     private long eventTime;
     private int participantMinAge;
     private boolean isOnline;
+    private boolean isFree;
     private String urlEvent;
 
     public Integer getId() {
@@ -83,6 +84,14 @@ public class Event {
 
     public void setOnline(boolean online) {
         isOnline = online;
+    }
+
+    public boolean isFree() {
+        return isFree;
+    }
+
+    public void setFree(boolean free) {
+        isFree = free;
     }
 
     public String getUrlEvent() {

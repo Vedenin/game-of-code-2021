@@ -132,13 +132,13 @@
                             <div class="card-body">
                                 <div class="form-group">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="freeEvent" checked>
+                                        <input class="form-check-input" type="checkbox"  id="freeEvent" th:field="*{free}" onChange="this.form.submit()"/>
                                         <label class="form-check-label" for="freeEvent">
                                             Free Events
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="paidEvent" checked>
+                                        <input class="form-check-input" type="checkbox"  id="paidEvent" th:field="*{paid}" onChange="this.form.submit()"/>
                                         <label class="form-check-label" for="paidEvent">
                                             Paid Events
                                         </label>
@@ -296,7 +296,7 @@
                         '</div>' +
                         '<div class="col-md-6">' +
                             '<div class="form-group">' +
-                                '<input type="text" onfocus="(this.type=\'datetime-local\')" class="form-control" placeholder="Date and Time (dd/MM/yyyy hh:mm)" name="eventTime" required>' +
+                                '<input type="text" onfocus="(this.type=\'datetime-local\')" class="form-control" placeholder="Date and Time " name="eventTime" required>' +
                             '</div>' +
                         '</div>' +
                         '<div class="col-md-6">' +

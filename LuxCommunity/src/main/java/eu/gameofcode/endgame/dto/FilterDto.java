@@ -8,6 +8,8 @@ public class FilterDto {
     private boolean kids;
     private boolean exhibition;
     private boolean culture;
+    private boolean free;
+    private boolean paid;
 
     public FilterDto() {
         this.family = true;
@@ -16,6 +18,8 @@ public class FilterDto {
         this.kids = true;
         this.exhibition = true;
         this.culture = true;
+        this.free = true;
+        this.paid = true;
     }
 
     public boolean isFamily() {
@@ -64,5 +68,21 @@ public class FilterDto {
 
     public void setCulture(boolean culture) {
         this.culture = culture;
+    }
+
+    public boolean isFree() {
+        return free;
+    }
+
+    public void setFree(boolean free) {
+        this.free = free;
+    }
+
+    public boolean isPaid() {
+        return paid;
+    }
+
+    public void setPaid(boolean paid) {
+        this.paid = paid;
     }
 }

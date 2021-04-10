@@ -50,14 +50,24 @@
             </div>
         </div>
     </nav>
+    <header id="page-header" th:style="'background: url(/img/bg.jpg) fixed 0 -300px;'">
+        <div class="container py-2">
+            <div class="row">
+                <div class="col-md-6 m-auto text-center">
+                    <p class="text-white display-4">All Luxembourg's Events in one place</p>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </header>
+
     <section id="filters">
         <div class="container">
             <div class="card-body">
-                <row>
-                    <h3 class="text-center">Filter throw our events!</h3>
-                </row>
-                <hr/>
                 <div class="row">
+                    <div class="col">
+                        <h4>Filter throw our events!</h4>
+                    </div>
                     <div class="col-md-6 ml-auto">
                         <div class="input-group">
                             <input type="text" class="form-control" placeholder="Key Word...">
@@ -127,9 +137,9 @@
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="on-ticket-event" checked>
-                                        <label class="form-check-label" for="on-ticket-event">
-                                            on ticket event
+                                        <input class="form-check-input" type="checkbox" value="" id="paidEvent" checked>
+                                        <label class="form-check-label" for="paidEvent">
+                                            Paid Events
                                         </label>
                                     </div>
                                 </div>
@@ -270,7 +280,7 @@
         }
 
         mymap.on('click', function (e) {
-            change('<div class="container">' +
+            change('<form class="container" method="POST" action="http://localhost:18081/" th:with="eventDto=${new EventDto()}">' +
             '<div class="card p-4">' +
                 '<div class="card-body">' +
                     '<h3 class="text-center">Please fill out this form to add event</h3>' +
@@ -278,32 +288,40 @@
                     '<div class="row">' +
                         '<div class="col-md-6">' +
                             '<div class="form-group">' +
-                                '<input type="text" class="form-control" placeholder="Event Name">' +
+                                '<input type="text" class="form-control" placeholder="Event Name" name="name" required>' +
                             '</div>' +
                         '</div>' +
                         '<div class="col-md-6">' +
                             '<div class="form-group">' +
-                                '<input type="text" class="form-control" placeholder="Date and Time">' +
+                                '<input type="text" class="form-control" placeholder="Date and Time (dd/MM/yyyy hh:mm)" name="eventTime" required>' +
                             '</div>' +
                         '</div>' +
                         '<div class="col-md-6">' +
                             '<div class="form-group">' +
-                                '<input type="text" class="form-control" placeholder="Address">' +
-                                '<input type="text" class="form-control" placeholder="Lat" value="'+ e.latlng.lat + '" readonly hidden>' +
-                                '<input type="text" class="form-control" placeholder="Lng" value="'+ e.latlng.lng +'" readonly hidden>' +
+                                '<input type="text" class="form-control" placeholder="Address" name="address">' +
+                                '<input type="text" class="form-control" placeholder="Lat" name="latitude" value="'+ e.latlng.lat + '" readonly hidden>' +
+                                '<input type="text" class="form-control" placeholder="Lng" name="longitude" value="'+ e.latlng.lng +'" readonly hidden>' +
                             '</div>' +
                         '</div>' +
 
                         '<div class="col-md-6">' +
                             '<div class="form-group">' +
-                                '<input type="text" class="form-control" placeholder="Categories">' +
+                               '<select class="form-control form-select" placeholder="Category" name="category">\n' +
+                               '  <option value="" selected disabled>Select Category</option>\n\n' +
+                               '  <option value="family">Family</option>\n' +
+                               '  <option value="sport">Sport</option>\n' +
+                               '  <option value="cinema">Cinema</option>\n' +
+                               '  <option value="kids">Kids</option>\n' +
+                               '  <option value="exhibition">Exhibition</option>\n' +
+                               '  <option value="Culture">Culture</option>\n' +
+                               '</select>' +
                             '</div>' +
                         '</div>' +
                     '</div>' +
                     '<div class="row">' +
                         '<div class="col-md-12">' +
                             '<div class="form-group">' +
-                                '<textarea class="form-control" placeholder="Description"></textarea>' +
+                                '<textarea class="form-control" placeholder="Description" name="description" required></textarea>' +
                             '</div>' +
                         '</div>' +
                         '<div class="col">' +
@@ -314,7 +332,7 @@
                     '</div>' +
                 '</div>' +
             '</div>' +
-        '</div>' +
+                '</form>' +
     '</section>');
         });
         /*]]>*/

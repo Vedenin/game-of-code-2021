@@ -4,10 +4,7 @@ import eu.gameofcode.endgame.dto.EventDto;
 import eu.gameofcode.endgame.service.EventService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/")
@@ -25,9 +22,10 @@ public class EventController {
         return "events";
     }
 
-    @PostMapping("/events")
-    public String addNew(EventDto eventDto) {
+    @PostMapping
+    public String addNew(Model model, EventDto eventDto) {
         eventService.addNew(eventDto);
+        model.addAttribute("eventsDto", eventService.findAll());
         return "events";
     }
 

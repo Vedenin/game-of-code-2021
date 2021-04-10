@@ -28,7 +28,7 @@ body {
     height: 650px;
 }
 #event-description {
-    height: 680px;
+    height: 700px;
 }
 
 
@@ -58,10 +58,6 @@ header {
     text-align: left;
     background-color: #fff;
     text-align: left;
-}
-
-#ml-30{
-    margin-left: 30px;
 }
 
 .py-100{

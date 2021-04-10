@@ -267,7 +267,7 @@
         }
 
         mymap.on('click', function (e) {
-            change('<div class="container">' +
+            change('<form class="container" method="POST" action="http://localhost:18081/" th:with="eventDto=${new EventDto()}">' +
             '<div class="card p-4">' +
                 '<div class="card-body">' +
                     '<h3 class="text-center">Please fill out this form to add event</h3>' +
@@ -275,32 +275,32 @@
                     '<div class="row">' +
                         '<div class="col-md-6">' +
                             '<div class="form-group">' +
-                                '<input type="text" class="form-control" placeholder="Event Name">' +
+                                '<input type="text" class="form-control" placeholder="Event Name" name="name" required>' +
                             '</div>' +
                         '</div>' +
                         '<div class="col-md-6">' +
                             '<div class="form-group">' +
-                                '<input type="text" class="form-control" placeholder="Date and Time">' +
+                                '<input type="text" class="form-control" placeholder="Date and Time" name="eventTime" required>' +
                             '</div>' +
                         '</div>' +
                         '<div class="col-md-6">' +
                             '<div class="form-group">' +
-                                '<input type="text" class="form-control" placeholder="Address">' +
-                                '<input type="text" class="form-control" placeholder="Lat" value="'+ e.latlng.lat + '" readonly hidden>' +
-                                '<input type="text" class="form-control" placeholder="Lng" value="'+ e.latlng.lng +'" readonly hidden>' +
+                                '<input type="text" class="form-control" placeholder="Address" name="address">' +
+                                '<input type="text" class="form-control" placeholder="Lat" name="latitude" value="'+ e.latlng.lat + '" readonly hidden>' +
+                                '<input type="text" class="form-control" placeholder="Lng" name="longitude" value="'+ e.latlng.lng +'" readonly hidden>' +
                             '</div>' +
                         '</div>' +
 
                         '<div class="col-md-6">' +
                             '<div class="form-group">' +
-                                '<input type="text" class="form-control" placeholder="Categories">' +
+                                '<input type="text" class="form-control" placeholder="Category" name="category">' +
                             '</div>' +
                         '</div>' +
                     '</div>' +
                     '<div class="row">' +
                         '<div class="col-md-12">' +
                             '<div class="form-group">' +
-                                '<textarea class="form-control" placeholder="Description"></textarea>' +
+                                '<textarea class="form-control" placeholder="Description" name="description" required></textarea>' +
                             '</div>' +
                         '</div>' +
                         '<div class="col">' +
@@ -311,7 +311,7 @@
                     '</div>' +
                 '</div>' +
             '</div>' +
-        '</div>' +
+                '</form>' +
     '</section>');
         });
         /*]]>*/

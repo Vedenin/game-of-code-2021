@@ -290,7 +290,7 @@
                         '</div>' +
                         '<div class="col-md-6">' +
                             '<div class="form-group">' +
-                                '<input type="text" class="form-control" placeholder="Date and Time" name="eventTime" required>' +
+                                '<input type="text" class="form-control" placeholder="Date and Time (dd/MM/yyyy hh:mm)" name="eventTime" required>' +
                             '</div>' +
                         '</div>' +
                         '<div class="col-md-6">' +
@@ -303,7 +303,15 @@
 
                         '<div class="col-md-6">' +
                             '<div class="form-group">' +
-                                '<input type="text" class="form-control" placeholder="Category" name="category">' +
+                               '<select class="form-control form-select" placeholder="Category" name="category">\n' +
+                               '  <option value="" selected disabled>Select Category</option>\n\n' +
+                               '  <option value="family">Family</option>\n' +
+                               '  <option value="sport">Sport</option>\n' +
+                               '  <option value="cinema">Cinema</option>\n' +
+                               '  <option value="kids">Kids</option>\n' +
+                               '  <option value="exhibition">Exhibition</option>\n' +
+                               '  <option value="Culture">Culture</option>\n' +
+                               '</select>' +
                             '</div>' +
                         '</div>' +
                     '</div>' +

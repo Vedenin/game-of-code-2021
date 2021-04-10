@@ -213,7 +213,8 @@
                 change("<p ><b> Name:</b>  <b id=\"name\"></b>" + obj.name + "</p>" +
                     "<p><b> Description:</b> " + obj.description + "</p>" +
                     "<p><b> Category:</b> " + obj.category + "</p>" +
-                    "<p><b> Date:</b> " + obj.eventTime + "</p>"
+                    "<p><b> Date:</b> " + obj.eventTime + "</p>" +
+                    "<p><b> Prce:</b> " + obj.price + "</p>"
                     + "<h1 class=\"text-center\">Photo Gallery</h1>\n" +
                     "<div class=\"row mb-4\">\n" +
                     "            <div class=\"col-md-4\">\n" +
@@ -320,7 +321,13 @@
                                '</select>' +
                             '</div>' +
                         '</div>' +
+                            '<div class="col-md-6">' +
+                            '<div class="form-group">' +
+                            '<input type="number" class="form-control" placeholder="Price" name="price" value="0" required>' +
+                            '</div>' +
+                        '</div>' +
                     '</div>' +
+
                     '<div class="row">' +
                         '<div class="col-md-12">' +
                             '<div class="form-group">' +

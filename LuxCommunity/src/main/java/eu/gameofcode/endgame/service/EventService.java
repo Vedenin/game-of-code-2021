@@ -64,7 +64,7 @@ public class EventService {
 
         List<EventDto> eventDtos = events.stream()
                 .filter(event -> (categories.contains(event.getCategory().toLowerCase(Locale.ROOT)))
-                && ((filterDto.isFree()) && filterDto.isPaid()) || (filterDto.isFree() && event.isFree()) || (filterDto.isPaid() && !event.isFree()))
+                && ((filterDto.isFree() && filterDto.isPaid()) || (filterDto.isFree() && event.getPrice() <= 0) || (filterDto.isPaid() && event.getPrice() > 0)))
                 .map(this::fromModel)
                 .collect(Collectors.toList());
 
@@ -80,6 +80,7 @@ public class EventService {
         dto.setCategory(event.getCategory());
         dto.setDescription(event.getDescription());
         dto.setOnline(event.isOnline());
+        dto.setPrice(event.getPrice());
         Date date = new Date(event.getEventTime());
 
         dto.setEventTime(new SimpleDateFormat("dd/MM/yyyy hh:mm").format(date));
@@ -96,6 +97,7 @@ public class EventService {
         event.setCategory(dto.getCategory());
         event.setDescription(dto.getDescription());
         event.setOnline(dto.isOnline());
+        event.setPrice(dto.getPrice());
         Long ms = 0l;
         try {
             ms = new SimpleDateFormat("yyyy-MM-dd hh:mm").parse(dto.getEventTime().replace("T", " ")).getTime();
@@ -119,7 +121,7 @@ public class EventService {
         dto1.setDescription("Art exhibition");
         dto1.setEventTime(1618999951239l);
         dto1.setOnline(false);
-        dto1.setFree(false);
+        dto1.setPrice(0);
 
         Event dto2 = new Event();
         dto2.setId(2);
@@ -130,7 +132,7 @@ public class EventService {
         dto2.setDescription("Family Dance Class");
         dto2.setEventTime(1618999951239l);
         dto2.setOnline(false);
-        dto2.setFree(true);
+        dto2.setPrice(1);
 
         Event dto3 = new Event();
         dto3.setId(3);

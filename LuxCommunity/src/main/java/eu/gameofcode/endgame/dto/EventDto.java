@@ -14,6 +14,7 @@ public class EventDto {
     private String eventTime;
     private int participantMinAge;
     private boolean isOnline;
+    private double price;
     private String urlEvent;
 
     public Integer getId() {
@@ -102,5 +103,13 @@ public class EventDto {
 
     public void setUrlEvent(String urlEvent) {
         this.urlEvent = urlEvent;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
     }
 }

@@ -2,6 +2,7 @@ package eu.gameofcode.endgame.dto;
 
 public class FilterDto {
 
+    private String keyword;
     private boolean family;
     private boolean sport;
     private boolean cinema;
@@ -20,6 +21,14 @@ public class FilterDto {
         this.culture = true;
         this.free = true;
         this.paid = true;
+    }
+
+    public String getKeyword() {
+        return keyword;
+    }
+
+    public void setKeyword(String keyword) {
+        this.keyword = keyword;
     }
 
     public boolean isFamily() {

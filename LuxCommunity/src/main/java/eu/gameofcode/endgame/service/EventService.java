@@ -64,7 +64,8 @@ public class EventService {
 
         List<EventDto> eventDtos = events.stream()
                 .filter(event -> (categories.contains(event.getCategory().toLowerCase(Locale.ROOT)))
-                && ((filterDto.isFree() && filterDto.isPaid()) || (filterDto.isFree() && event.getPrice() <= 0) || (filterDto.isPaid() && event.getPrice() > 0)))
+                && ((filterDto.isFree() && filterDto.isPaid()) || (filterDto.isFree() && event.getPrice() <= 0) || (filterDto.isPaid() && event.getPrice() > 0))
+                && (filterDto.getKeyword() == null || event.getName().contains(filterDto.getKeyword()) || event.getDescription().contains(filterDto.getKeyword())) )
                 .map(this::fromModel)
                 .collect(Collectors.toList());
 

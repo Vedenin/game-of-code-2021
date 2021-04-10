@@ -54,7 +54,7 @@
         <div class="container">
             <div class="card-body">
                 <row>
-                    <h3 class="text-center">Filter throw our events!</h3>
+                    <h3 class="text-center">Filter supermarkets!</h3>
                 </row>
                 <hr/>
                 <div class="row">
@@ -67,82 +67,70 @@
                         </div>
                     </div>
                 </div>
-                <div class="row py-3">
-                    <div class="col-md-4">
-                        <div class="card">
-                            <div class="card-header">Categories</div>
+                <div>
+                    <div class="card">
+                            <div class="card-header">Networks</div>
                             <div class="card-body">
                                 <div class="form-group float-left">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="family" checked>
-                                        <label class="form-check-label" for="family">
-                                            Family
+                                        <input class="form-check-input" type="checkbox" value="" id="Lidl" checked>
+                                        <label class="form-check-label" for="Lidl">
+                                            Lidl
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="sport" checked>
-                                        <label class="form-check-label" for="sport">
-                                            Sport
+                                        <input class="form-check-input" type="checkbox" value="" id="Auchan" checked>
+                                        <label class="form-check-label" for="Auchan">
+                                            Auchan
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="cinema" checked>
-                                        <label class="form-check-label" for="cinema">
-                                            Cinema
+                                        <input class="form-check-input" type="checkbox" value="" id="Aldi" checked>
+                                        <label class="form-check-label" for="Aldi">
+                                            Aldi
                                         </label>
                                     </div>
                                 </div>
                                 <div class="form-group float-right">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="kids" checked>
-                                        <label class="form-check-label" for="kids">
-                                            Kids
+                                        <input class="form-check-input" type="checkbox" value="" id="Cactus" checked>
+                                        <label class="form-check-label" for="Cactus">
+                                            Cactus
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="exhibition" checked>
-                                        <label class="form-check-label" for="exhibition">
-                                            Exhibition
+                                        <input class="form-check-input" type="checkbox" value="" id="Delhaize" checked>
+                                        <label class="form-check-label" for="Delhaize">
+                                            Delhaize
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="culture" checked>
-                                        <label class="form-check-label" for="culture">
-                                            Culture
+                                        <input class="form-check-input" type="checkbox" value="" id="Colruyt" checked>
+                                        <label class="form-check-label" for="Colruyt">
+                                            Colruyt
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="Monop" checked>
+                                        <label class="form-check-label" for="Monop">
+                                            Monop
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="Alima" checked>
+                                        <label class="form-check-label" for="Alima">
+                                            Alima
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="SMATCH" checked>
+                                        <label class="form-check-label" for="SMATCH">
+                                            SMATCH & MATCH
                                         </label>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <div class="card-header">Free or not</div>
-                            <div class="card-body">
-                                <div class="form-group">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="freeEvent" checked>
-                                        <label class="form-check-label" for="freeEvent">
-                                            Free Events
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="on-ticket-event" checked>
-                                        <label class="form-check-label" for="on-ticket-event">
-                                            on ticket event
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <div class="card-header">Event Date</div>
-                            <div class="card-body">
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -157,7 +145,7 @@
                     <div id="event-description" class="card">
                         <p class="ml-30">
                         <div class="card-header">
-                            <h4>Event Information</h4>
+                            <h4>Supermarket Information</h4>
                         </div>
                         <div class="card-body">
                             <div id="id1" class="ml-30">
@@ -192,74 +180,13 @@
             accessToken: 'pk.eyJ1IjoidmVkZW5pbjE5ODAiLCJhIjoiY2tuOTkyNTkyMGhvbzJ3cGRjbXA2djR2ZSJ9.MhYaxggSKZ0APuZgEoS2Qg'
         }).addTo(mymap);
 
-        var events = [[${eventsDto}]];
+        var events = [[${supermarketsDto}]];
 
         for (var key in events) {
             let obj = events[key];
 
             L.marker([obj.latitude, obj.longitude]).on('click', function (e) {
-                change("<p ><b> Name:</b>  <b id=\"name\"></b>" + obj.name + "</p>" +
-                    "<p><b> Description:</b> " + obj.description + "</p>" +
-                    "<p><b> Date:</b> " + obj.eventTime + "</p>"
-                    + "<h1 class=\"text-center\">Photo Gallery</h1>\n" +
-                    "<div class=\"row mb-4\">\n" +
-                    "            <div class=\"col-md-4\">\n" +
-                    "                <a href=\"http://source.unsplash.com/random/160x160\"\n" +
-                    "                   data-toggle=\"lightbox\"\n" +
-                    "                   data-gallery=\"img-gallery\"\n" +
-                    "                   data-height=\"160\"\n" +
-                    "                   data-width=\"160\">\n" +
-                    "                    <img src=\"http://source.unsplash.com/random/160x160?" + obj.name + "\" alt=\"image\" class=\"img-fluid\">\n" +
-                    "                </a>\n" +
-                    "            </div>\n" +
-                    "            <div class=\"col-md-4\">\n" +
-                    "                <a href=\"http://source.unsplash.com/random/160x160\"\n" +
-                    "                   data-toggle=\"lightbox\"\n" +
-                    "                   data-gallery=\"img-gallery\"\n" +
-                    "                   data-height=\"161\"\n" +
-                    "                   data-width=\"161\">\n" +
-                    "                    <img src=\"http://source.unsplash.com/random/161x161?" + obj.name + "\" alt=\"image\" class=\"img-fluid\">\n" +
-                    "                </a>\n" +
-                    "            </div>\n" +
-                    "            <div class=\"col-md-4\">\n" +
-                    "                <a href=\"http://source.unsplash.com/random/160x160\"\n" +
-                    "                   data-toggle=\"lightbox\"\n" +
-                    "                   data-gallery=\"img-gallery\"\n" +
-                    "                   data-height=\"162\"\n" +
-                    "                   data-width=\"162\">\n" +
-                    "                    <img src=\"http://source.unsplash.com/random/162x162?" + obj.name + "\" alt=\"image\" class=\"img-fluid\">\n" +
-                    "                </a>\n" +
-                    "            </div>\n" +
-                    "        </div>\n" +
-                    "        <div class=\"row mb-4\">\n" +
-                    "            <div class=\"col-md-4\">\n" +
-                    "                <a href=\"http://source.unsplash.com/random/163x163\"\n" +
-                    "                   data-toggle=\"lightbox\"\n" +
-                    "                   data-gallery=\"img-gallery\"\n" +
-                    "                   data-height=\"163\"\n" +
-                    "                   data-width=\"163\">\n" +
-                    "                    <img src=\"http://source.unsplash.com/random/163x163?" + obj.name + "\" alt=\"image\" class=\"img-fluid\">\n" +
-                    "                </a>\n" +
-                    "            </div>\n" +
-                    "            <div class=\"col-md-4\">\n" +
-                    "                <a href=\"http://source.unsplash.com/random/164x164\"\n" +
-                    "                   data-toggle=\"lightbox\"\n" +
-                    "                   data-gallery=\"img-gallery\"\n" +
-                    "                   data-height=\"164\"\n" +
-                    "                   data-width=\"164\">\n" +
-                    "                    <img src=\"http://source.unsplash.com/random/164x164?" + obj.name + "\" alt=\"image\" class=\"img-fluid\">\n" +
-                    "                </a>\n" +
-                    "            </div>\n" +
-                    "            <div class=\"col-md-4\">\n" +
-                    "                <a href=\"http://source.unsplash.com/random/165x165\"\n" +
-                    "                   data-toggle=\"lightbox\"\n" +
-                    "                   data-gallery=\"img-gallery\"\n" +
-                    "                   data-height=\"165\"\n" +
-                    "                   data-width=\"165\">\n" +
-                    "                    <img src=\"http://source.unsplash.com/random/165x165?" + obj.name + "\" alt=\"image\" class=\"img-fluid\">\n" +
-                    "                </a>\n" +
-                    "            </div>\n" +
-                    "        </div>\n");
+                change("<p ><b> Name:</b>  <b id=\"name\"></b>" + obj.name + "</p>");
             }).addTo(mymap).bindPopup(obj.name).openPopup();
         }
 

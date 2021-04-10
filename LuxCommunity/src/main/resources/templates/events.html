@@ -320,37 +320,41 @@
                         '</div>' +
                         '<div class="col-md-6">' +
                             '<div class="form-group">' +
+                                '<select class="form-control form-select" placeholder="Category" name="category" required>\n' +
+                                    '<option value="" selected disabled>Select Category</option>\n\n' +
+                                    '<option value="family">Family</option>\n' +
+                                    '<option value="sport">Sport</option>\n' +
+                                    '<option value="cinema">Cinema</option>\n' +
+                                    '<option value="kids">Kids</option>\n' +
+                                    '<option value="exhibition">Exhibition</option>\n' +
+                                    '<option value="Culture">Culture</option>\n' +
+                                  '</select>' +
+                            '</div>' +
+                        '</div>' +
+                    '</div>' +
+                    '<div class="row">' +
+                        '<div class="col-md-12">' +
+                            '<div class="form-group">' +
                                 '<input type="text" onfocus="(this.type=\'datetime-local\')" class="form-control" placeholder="Date and Time " name="eventTime" required>' +
                             '</div>' +
                         '</div>' +
-                        '<div class="col-md-6">' +
+                    '</div>' +
+                    '<div class="row">' +
+                        '<div class="col-md-12">' +
                             '<div class="form-group">' +
                                 '<input type="text" class="form-control" placeholder="Address" name="address" value="'+ addr.toString() + '">' +
                                 '<input type="text" class="form-control" placeholder="Lat" name="latitude" value="'+ e.latlng.lat + '" readonly hidden>' +
                                 '<input type="text" class="form-control" placeholder="Lng" name="longitude" value="'+ e.latlng.lng +'" readonly hidden>' +
                             '</div>' +
                         '</div>' +
-
+                    '</div>' +
+                    '<div class="row">' +
                         '<div class="col-md-6">' +
                             '<div class="form-group">' +
-                               '<select class="form-control form-select" placeholder="Category" name="category" required>\n' +
-                               '  <option value="" selected disabled>Select Category</option>\n\n' +
-                               '  <option value="family">Family</option>\n' +
-                               '  <option value="sport">Sport</option>\n' +
-                               '  <option value="cinema">Cinema</option>\n' +
-                               '  <option value="kids">Kids</option>\n' +
-                               '  <option value="exhibition">Exhibition</option>\n' +
-                               '  <option value="Culture">Culture</option>\n' +
-                               '</select>' +
-                            '</div>' +
-                        '</div>' +
-                            '<div class="col-md-6">' +
-                            '<div class="form-group">' +
-                            '<input type="number" class="form-control" placeholder="Price" name="price"  required>' +
+                                '<input type="number" class="form-control" placeholder="Price" name="price"  required>' +
                             '</div>' +
                         '</div>' +
                     '</div>' +
-
                     '<div class="row">' +
                         '<div class="col-md-12">' +
                             '<div class="form-group">' +

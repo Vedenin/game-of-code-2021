@@ -96,7 +96,7 @@ public class EventService {
         event.setOnline(dto.isOnline());
         Long ms = 0l;
         try {
-            ms = new SimpleDateFormat("dd/MM/yyyy hh:mm").parse(dto.getEventTime()).getTime();
+            ms = new SimpleDateFormat("yyyy-MM-dd hh:mm").parse(dto.getEventTime().replace("T", " ")).getTime();
         } catch (ParseException e) {
             e.printStackTrace();
         }

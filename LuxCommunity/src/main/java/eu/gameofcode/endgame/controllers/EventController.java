@@ -7,7 +7,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Objects;
 
 @Controller
 @RequestMapping("/")
@@ -32,6 +31,7 @@ public class EventController {
     @PostMapping
     public String addNew(Model model, EventDto eventDto) {
         eventService.addNew(eventDto);
+        model.addAttribute("filter", filter);
         model.addAttribute("eventsDto", eventService.findAll());
         return "events";
     }

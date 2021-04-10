@@ -216,13 +216,82 @@
         }).addTo(mymap);
 
         var events = [[${eventsDto}]];
-
+        let lastEventInHtml = '';
         for (var key in events) {
             let obj = events[key];
             let price = 'free';
-            if(obj.price && obj.price > 0) {
+            if (obj.price && obj.price > 0) {
                 price = obj.price + " €";
             }
+            lastEventInHtml = '<div class="card-body">' +
+                '<h2 class="text-center">Event Information</h2>' +
+                '<hr/>' +
+                "<p ><b> Name:</b>  <b id=\"name\"></b>" + obj.name + "</p>" +
+                "<p><b> Description:</b> " + obj.description + "</p>" +
+                "<p><b> Category:</b> " + obj.category + "</p>" +
+                "<p><b> Date:</b> " + obj.eventTime + "</p>" +
+                "<p><b> Price:</b> " +  price + "</p>" +
+                "<h3 class=\"text-center\">Photo Gallery</h3>\n" +
+                "<div class=\"row mb-4\">\n" +
+                "            <div class=\"col-md-4\">\n" +
+                "                <a href=\"http://source.unsplash.com/random/160x160\"\n" +
+                "                   data-toggle=\"lightbox\"\n" +
+                "                   data-gallery=\"img-gallery\"\n" +
+                "                   data-height=\"160\"\n" +
+                "                   data-width=\"160\">\n" +
+                "                    <img src=\"http://source.unsplash.com/random/160x160?" + obj.category + "\" alt=\"image\" class=\"img-fluid\">\n" +
+                "                </a>\n" +
+                "            </div>\n" +
+                "            <div class=\"col-md-4\">\n" +
+                "                <a href=\"http://source.unsplash.com/random/160x160\"\n" +
+                "                   data-toggle=\"lightbox\"\n" +
+                "                   data-gallery=\"img-gallery\"\n" +
+                "                   data-height=\"161\"\n" +
+                "                   data-width=\"161\">\n" +
+                "                    <img src=\"http://source.unsplash.com/random/161x161?" + obj.category + "\" alt=\"image\" class=\"img-fluid\">\n" +
+                "                </a>\n" +
+                "            </div>\n" +
+                "            <div class=\"col-md-4\">\n" +
+                "                <a href=\"http://source.unsplash.com/random/160x160\"\n" +
+                "                   data-toggle=\"lightbox\"\n" +
+                "                   data-gallery=\"img-gallery\"\n" +
+                "                   data-height=\"162\"\n" +
+                "                   data-width=\"162\">\n" +
+                "                    <img src=\"http://source.unsplash.com/random/162x162?" + obj.category + "\" alt=\"image\" class=\"img-fluid\">\n" +
+                "                </a>\n" +
+                "            </div>\n" +
+                "        </div>\n" +
+                "        <div class=\"row mb-4\">\n" +
+                "            <div class=\"col-md-4\">\n" +
+                "                <a href=\"http://source.unsplash.com/random/163x163\"\n" +
+                "                   data-toggle=\"lightbox\"\n" +
+                "                   data-gallery=\"img-gallery\"\n" +
+                "                   data-height=\"163\"\n" +
+                "                   data-width=\"163\">\n" +
+                "                    <img src=\"http://source.unsplash.com/random/163x163?" + obj.category + "\" alt=\"image\" class=\"img-fluid\">\n" +
+                "                </a>\n" +
+                "            </div>\n" +
+                "            <div class=\"col-md-4\">\n" +
+                "                <a href=\"http://source.unsplash.com/random/164x164\"\n" +
+                "                   data-toggle=\"lightbox\"\n" +
+                "                   data-gallery=\"img-gallery\"\n" +
+                "                   data-height=\"164\"\n" +
+                "                   data-width=\"164\">\n" +
+                "                    <img src=\"http://source.unsplash.com/random/164x164?" + obj.category + "\" alt=\"image\" class=\"img-fluid\">\n" +
+                "                </a>\n" +
+                "            </div>\n" +
+                "            <div class=\"col-md-4\">\n" +
+                "                <a href=\"http://source.unsplash.com/random/165x165\"\n" +
+                "                   data-toggle=\"lightbox\"\n" +
+                "                   data-gallery=\"img-gallery\"\n" +
+                "                   data-height=\"165\"\n" +
+                "                   data-width=\"165\">\n" +
+                "                    <img src=\"http://source.unsplash.com/random/165x165?" + obj.category + "\" alt=\"image\" class=\"img-fluid\">\n" +
+                "                </a>\n" +
+                "            </div>\n" +
+                "        </div>\n " +
+                "</div>";
+
             L.marker([obj.latitude, obj.longitude]).on('click', function (e) {
                 change(
                     '<div class="card-body">' +
@@ -297,7 +366,11 @@
         }
 
         var popup = L.popup();
-
+        if (lastEventInHtml === "") {
+            lastEventInHtml = '<div class="card-body">' +
+                '<h2 class="text-center">There are no events for your request</h2>' +"</div>"
+        }
+        document.getElementById("id1").innerHTML = lastEventInHtml;
         function change(t) {
             document.getElementById("id1").innerHTML = t
         }

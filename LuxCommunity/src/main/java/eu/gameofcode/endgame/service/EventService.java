@@ -43,6 +43,19 @@ public class EventService {
 
     public Object getWithFilter(FilterDto filterDto) {
         List<String> categories = new ArrayList<>();
+        long from = 0;
+        long to = 0;
+        try {
+            if (filterDto.getFrom() != null && !filterDto.getFrom().isEmpty()) {
+                from = new SimpleDateFormat("yyyy-MM-dd hh:mm").parse(filterDto.getFrom().replace("T", " ")).getTime();
+            }
+            if (filterDto.getTo() != null && !filterDto.getTo().isEmpty()) {
+                to = new SimpleDateFormat("yyyy-MM-dd hh:mm").parse(filterDto.getTo().replace("T", " ")).getTime();
+            }
+
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
         if (filterDto.isFamily()) {
             categories.add("family");
         }
@@ -62,10 +75,15 @@ public class EventService {
             categories.add("culture");
         }
 
+        long finalFrom = from;
+        long finalTo = to;
+
         List<EventDto> eventDtos = events.stream()
                 .filter(event -> (categories.contains(event.getCategory().toLowerCase(Locale.ROOT)))
-                && ((filterDto.isFree() && filterDto.isPaid()) || (filterDto.isFree() && event.getPrice() <= 0) || (filterDto.isPaid() && event.getPrice() > 0))
-                && (filterDto.getKeyword() == null || event.getName().contains(filterDto.getKeyword()) || event.getDescription().contains(filterDto.getKeyword())) )
+                        && ((filterDto.isFree() && filterDto.isPaid()) || (filterDto.isFree() && event.getPrice() <= 0) || (filterDto.isPaid() && event.getPrice() > 0))
+                        && (filterDto.getKeyword() == null || event.getName().contains(filterDto.getKeyword()) || event.getDescription().contains(filterDto.getKeyword()))
+                        && (finalFrom == 0l || finalFrom <= event.getEventTime())
+                        && (finalTo == 0l || finalTo >= event.getEventTime()))
                 .map(this::fromModel)
                 .collect(Collectors.toList());
 

@@ -1,5 +1,9 @@
 package eu.gameofcode.endgame.dto;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class FilterDto {
 
     private String keyword;
@@ -11,6 +15,8 @@ public class FilterDto {
     private boolean culture;
     private boolean free;
     private boolean paid;
+    private String from;
+    private String to;
 
     public FilterDto() {
         this.family = true;
@@ -93,5 +99,21 @@ public class FilterDto {
 
     public void setPaid(boolean paid) {
         this.paid = paid;
+    }
+
+    public String getFrom() {
+        return from;
+    }
+
+    public void setFrom(String from) {
+        this.from = from;
+    }
+
+    public String getTo() {
+        return to;
+    }
+
+    public void setTo(String to) {
+        this.to = to;
     }
 }

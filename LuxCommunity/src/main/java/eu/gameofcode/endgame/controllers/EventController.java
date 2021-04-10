@@ -32,7 +32,7 @@ public class EventController {
     public String addNew(Model model, EventDto eventDto) {
         eventService.addNew(eventDto);
         model.addAttribute("filter", filter);
-        model.addAttribute("eventsDto", eventService.findAll());
+        model.addAttribute("eventsDto", eventService.getWithFilter(filter));
         return "events";
     }
 

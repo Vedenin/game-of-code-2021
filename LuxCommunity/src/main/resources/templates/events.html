@@ -151,6 +151,20 @@
                         <div class="card">
                             <div class="card-header">Event Date</div>
                             <div class="card-body">
+                                <div class="form-group">
+                                    <div class="form-date">
+                                        <label class="form-date-label" for="fromDate">
+                                            From
+                                        </label>
+                                        <input class="form-date-input" type="datetime-local"  id="fromDate"  th:field="*{from}" onChange="this.form.submit()"/>
+                                    </div>
+                                    <div class="form-date">
+                                        <label class="form-date-label" for="toDate">
+                                            To
+                                        </label>
+                                        <input class="form-date-input" type="datetime-local"  id="toDate" th:field="*{to}" onChange="this.form.submit()"/>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

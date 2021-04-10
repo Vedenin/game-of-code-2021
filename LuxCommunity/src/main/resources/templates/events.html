@@ -182,9 +182,6 @@
                 <div class="col-md-6">
                     <div id="event-description" class="card">
                         <p class="ml-30">
-                        <div class="card-header">
-                            <h4>Event Information</h4>
-                        </div>
                         <div class="card-body">
                             <div id="id1" class="ml-30">
                             </div>
@@ -222,14 +219,21 @@
 
         for (var key in events) {
             let obj = events[key];
-
+            let price = 'free';
+            if(obj.price && obj.price > 0) {
+                price = obj.price + " €";
+            }
             L.marker([obj.latitude, obj.longitude]).on('click', function (e) {
-                change("<p ><b> Name:</b>  <b id=\"name\"></b>" + obj.name + "</p>" +
+                change(
+                    '<div class="card-body">' +
+                    '<h2 class="text-center">Event Information</h2>' +
+                    '<hr/>' +
+                    "<p ><b> Name:</b>  <b id=\"name\"></b>" + obj.name + "</p>" +
                     "<p><b> Description:</b> " + obj.description + "</p>" +
                     "<p><b> Category:</b> " + obj.category + "</p>" +
                     "<p><b> Date:</b> " + obj.eventTime + "</p>" +
-                    "<p><b> Price:</b> " + obj.price + "</p>" +
-                    + "<h1 class=\"text-center\">Photo Gallery</h1>\n" +
+                    "<p><b> Price:</b> " +  price + "</p>" +
+                    "<h3 class=\"text-center\">Photo Gallery</h3>\n" +
                     "<div class=\"row mb-4\">\n" +
                     "            <div class=\"col-md-4\">\n" +
                     "                <a href=\"http://source.unsplash.com/random/160x160\"\n" +
@@ -287,7 +291,8 @@
                     "                    <img src=\"http://source.unsplash.com/random/165x165?" + obj.category + "\" alt=\"image\" class=\"img-fluid\">\n" +
                     "                </a>\n" +
                     "            </div>\n" +
-                    "        </div>\n");
+                    "        </div>\n " +
+                    "</div>");
             }).addTo(mymap).bindPopup(obj.name).openPopup();
         }
 
@@ -308,9 +313,8 @@
             addr = JSON.parse(request.responseText).results[0].formatted;
 
             change('<form class="container" method="POST" action="http://localhost:18081/" th:with="eventDto=${new EventDto()}">' +
-            '<div class="card p-4">' +
                 '<div class="card-body">' +
-                    '<h3 class="text-center">Please fill out this form to add event</h3>' +
+                    '<p class="text-center">Please fill out this form to add event</p>' +
                     '<hr/>' +
                     '<div class="row">' +
                         '<div class="col-md-6">' +
@@ -368,7 +372,6 @@
                         '</div>' +
                     '</div>' +
                 '</div>' +
-            '</div>' +
                 '</form>' +
     '</section>');
         });

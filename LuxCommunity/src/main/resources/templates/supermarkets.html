@@ -55,18 +55,16 @@
     </nav>
     <section id="filters">
         <div class="container">
+           <form class="container" method="POST" action="/supermarkets/filter"  th:object="${filter}">
             <div class="card-body">
-                <row>
-                    <h3 class="text-center">Filter supermarkets!</h3>
-                </row>
-                <hr/>
-                <div class="row">
-                    <div class="col-md-6 ml-auto">
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Key Word...">
-                            <div class="input-group-append">
-                                <button class="btn btn-success">Search</button>
-                            </div>
+                <div class="col">
+                    <h4>Filter supermarkets!</h4>
+                </div>
+                <div class="col-md-6 ml-auto">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Key Word..." th:field="*{keyword}">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-danger" type="submit">Search</button>
                         </div>
                     </div>
                 </div>
@@ -78,20 +76,20 @@
                                     <div class="col-4">
                                         <div class="form-group">
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="" id="Lidl" checked>
-                                                <label class="form-check-label" for="Lidl">
+                                                <input class="form-check-input" type="checkbox" value="" id="lidl" th:field="*{lidl}" onChange="this.form.submit()">
+                                                <label class="form-check-label" for="lidl">
                                                     Lidl
                                                 </label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="" id="Auchan" checked>
-                                                <label class="form-check-label" for="Auchan">
+                                                <input class="form-check-input" type="checkbox" value="" id="auchan" th:field="*{auchan}" onChange="this.form.submit()">
+                                                <label class="form-check-label" for="auchan">
                                                     Auchan
                                                 </label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="" id="Aldi" checked>
-                                                <label class="form-check-label" for="Aldi">
+                                                <input class="form-check-input" type="checkbox" value="" id="aldi"  th:field="*{aldi}" onChange="this.form.submit()">
+                                                <label class="form-check-label" for="aldi">
                                                     Aldi
                                                 </label>
                                             </div>
@@ -100,20 +98,20 @@
                                     <div class="col-4">
                                         <div class="form-group">
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="" id="Cactus" checked>
-                                                <label class="form-check-label" for="Cactus">
+                                                <input class="form-check-input" type="checkbox" value="" id="cactus" th:field="*{cactus}" onChange="this.form.submit()">
+                                                <label class="form-check-label" for="cactus">
                                                     Cactus
                                                 </label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="" id="Delhaize" checked>
-                                                <label class="form-check-label" for="Delhaize">
+                                                <input class="form-check-input" type="checkbox" value="" id="delhaize" th:field="*{delhaize}" onChange="this.form.submit()">
+                                                <label class="form-check-label" for="delhaize">
                                                     Delhaize
                                                 </label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="" id="Colruyt" checked>
-                                                <label class="form-check-label" for="Colruyt">
+                                                <input class="form-check-input" type="checkbox" value="" id="colruyt" th:field="*{colruyt}" onChange="this.form.submit()">
+                                                <label class="form-check-label" for="colruyt">
                                                     Colruyt
                                                 </label>
                                             </div>
@@ -122,20 +120,20 @@
                                     <div class="col-4">
                                         <div class="form-group">
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="" id="Monop" checked>
-                                                <label class="form-check-label" for="Monop">
+                                                <input class="form-check-input" type="checkbox" value="" id="monop" th:field="*{monop}" onChange="this.form.submit()">
+                                                <label class="form-check-label" for="monop">
                                                     Monop
                                                 </label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="" id="Alima" checked>
-                                                <label class="form-check-label" for="Alima">
+                                                <input class="form-check-input" type="checkbox" value="" id="alima" th:field="*{alima}" onChange="this.form.submit()">
+                                                <label class="form-check-label" for="alima">
                                                     Alima
                                                 </label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="" id="SMATCH" checked>
-                                                <label class="form-check-label" for="SMATCH">
+                                                <input class="form-check-input" type="checkbox" value="" id="smatch" th:field="*{smatch}" onChange="this.form.submit()">
+                                                <label class="form-check-label" for="smatch">
                                                     SMATCH & MATCH
                                                 </label>
                                             </div>
@@ -146,6 +144,7 @@
                         </div>
                 </div>
             </div>
+            </form>
         </div>
     </section>
     <section id="content" class="py-2 bg-light">

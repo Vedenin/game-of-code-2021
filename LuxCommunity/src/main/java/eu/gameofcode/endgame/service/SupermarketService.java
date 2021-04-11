@@ -1,23 +1,15 @@
 package eu.gameofcode.endgame.service;
 
-import eu.gameofcode.endgame.dto.EventDto;
 import eu.gameofcode.endgame.dto.SupermarketDto;
-import eu.gameofcode.endgame.model.Event;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.PostConstruct;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Date;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 public class SupermarketService {
 
-    private List<SupermarketDto> events = Arrays.asList(
+    private List<SupermarketDto> lists = Arrays.asList(
             SupermarketDto.create("Lidl","49.8150456","5.853053"),
             SupermarketDto.create("Lidl","49.6036879","5.9546766"),
             SupermarketDto.create("Lidl","50.002569","5.6913417"),
@@ -153,6 +145,6 @@ public class SupermarketService {
 
 
     public List<SupermarketDto> findAll() {
-        return events;
+        return lists;
     }
 }

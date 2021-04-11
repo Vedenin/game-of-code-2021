@@ -14,6 +14,39 @@ public class Event {
     private double price;
     private String urlEvent;
 
+    public Event() {
+    }
+
+    public Event(Integer id, String latitude, String longitude, String name, String category, String description) {
+        this.id = id;
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.name = name;
+        this.category = category;
+        this.description = description;
+    }
+
+    public Event(Integer id, String latitude, String longitude, String name, String category, String description, double price) {
+        this.id = id;
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.name = name;
+        this.category = category;
+        this.description = description;
+        this.price = price;
+    }
+
+    public Event(Integer id, String latitude, String longitude, String name, String category, String description, long eventTime, double price) {
+        this.id = id;
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.name = name;
+        this.category = category;
+        this.description = description;
+        this.eventTime = eventTime;
+        this.price = price;
+    }
+
     public Integer getId() {
         return id;
     }

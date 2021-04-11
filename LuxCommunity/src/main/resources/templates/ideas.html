@@ -57,7 +57,7 @@
         <div class="container py-2">
             <div class="row">
                 <div class="col-md-6 m-auto text-center">
-                    <p class="text-white display-4">All Luxembourg's Events in one place</p>
+                    <p class="text-white display-4">Share your best week-end ideas with others!</p>
                     </p>
                 </div>
             </div>
@@ -66,11 +66,11 @@
 
     <section id="filters">
         <div class="container">
-            <form class="container" method="POST" action="/filter"  th:object="${filter}">
+            <form class="container" method="POST" action="/ideas/filter"  th:object="${filter}">
                 <div class="card-body">
                 <div class="row">
                     <div class="col">
-                        <h4>Filter throw our events!</h4>
+                        <h4>Filter throw ideas!</h4>
                     </div>
                     <div class="col-md-6 ml-auto">
                         <div class="input-group">
@@ -94,15 +94,9 @@
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="sport"  name="sport" th:field="*{sport}" onChange="this.form.submit()"/>
-                                        <label class="form-check-label" for="sport">
-                                            Sport
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="cinema"  name="cinema" th:field="*{cinema}" onChange="this.form.submit()"/>
-                                        <label class="form-check-label" for="cinema">
-                                            Cinema
+                                        <input class="form-check-input" type="checkbox" id="culture"  name="culture" th:field="*{culture}" onChange="this.form.submit()"/>
+                                        <label class="form-check-label" for="culture">
+                                            Culture
                                         </label>
                                     </div>
                                 </div>
@@ -114,15 +108,9 @@
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="exhibition"  name="exhibition" th:field="*{exhibition}" onChange="this.form.submit()"/>
-                                        <label class="form-check-label" for="exhibition">
-                                            Exhibition
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="culture"  name="culture" th:field="*{culture}" onChange="this.form.submit()"/>
-                                        <label class="form-check-label" for="culture">
-                                            Culture
+                                        <input class="form-check-input" type="checkbox" id="sport"  name="sport" th:field="*{sport}" onChange="this.form.submit()"/>
+                                        <label class="form-check-label" for="sport">
+                                            Sport
                                         </label>
                                     </div>
                                 </div>
@@ -137,37 +125,14 @@
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox"  id="freeEvent" th:field="*{free}" onChange="this.form.submit()"/>
                                         <label class="form-check-label" for="freeEvent">
-                                            Free Events
+                                            Free
                                         </label>
                                     </div>
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox"  id="paidEvent" th:field="*{paid}" onChange="this.form.submit()"/>
                                         <label class="form-check-label" for="paidEvent">
-                                            Paid Events
+                                            Paid
                                         </label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-5">
-                        <div class="card">
-                            <div class="card-header">Event Date</div>
-                            <div class="card-body">
-                                <div class="form-group">
-                                    <div class="form-date form-inline">
-                                        <label class="form-date-label" for="fromDate">
-                                            From:
-                                        </label>
-                                        <input class="ml-auto form-control form-date-input" type="datetime-local"  id="fromDate"  th:field="*{from}" onChange="this.form.submit()"/>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="form-date form-inline">
-                                        <label class="form-date-label" for="toDate">
-                                            To:
-                                        </label>
-                                        <input class="ml-auto form-control form-date-input" type="datetime-local"  id="toDate" th:field="*{to}" onChange="this.form.submit()"/>
                                     </div>
                                 </div>
                             </div>
@@ -228,7 +193,7 @@
                 price = obj.price + " €";
             }
             lastEventInHtml = '<div class="card-body">' +
-                '<h2 class="text-center">Event Information</h2>' +
+                '<h2 class="text-center">Ideas Information</h2>' +
                 '<hr/>' +
                 "<p ><b> Name:</b>  <b id=\"name\"></b>" + obj.name + "</p>" +
                 "<p><b> Description:</b> " + obj.description + "</p>" +
@@ -304,7 +269,7 @@
             L.marker([obj.latitude, obj.longitude]).on('click', function (e) {
                 change(
                     '<div class="card-body">' +
-                    '<h2 class="text-center">Event Information</h2>' +
+                    '<h2 class="text-center">Ideas description</h2>' +
                     '<hr/>' +
                     "<p ><b> Name:</b>  <b id=\"name\"></b>" + obj.name + "</p>" +
                     "<p><b> Description:</b> " + obj.description + "</p>" +
@@ -382,7 +347,7 @@
         var popup = L.popup();
         if (lastEventInHtml === "") {
             lastEventInHtml = '<div class="card-body">' +
-                '<h2 class="text-center">There are no events for your request</h2>' +"</div>"
+                '<h2 class="text-center">There are no ideas for your request</h2>' +"</div>"
         }
         document.getElementById("id1").innerHTML = lastEventInHtml;
         function change(t) {
@@ -399,14 +364,14 @@
 
             addr = JSON.parse(request.responseText).results[0].formatted;
 
-            change('<form class="container" method="POST" action="/" th:with="eventDto=${new EventDto()}">' +
+            change('<form class="container" method="POST" action="/ideas" th:with="eventDto=${new EventDto()}">' +
                 '<div class="card-body">' +
-                    '<p class="text-center">Please fill out this form to add event</p>' +
+                    '<p class="text-center">Please fill out this form to add your ideas</p>' +
                     '<hr/>' +
                     '<div class="row">' +
                         '<div class="col-md-6">' +
                             '<div class="form-group">' +
-                                '<input type="text" class="form-control" placeholder="Event Name" name="name" required>' +
+                                '<input type="text" class="form-control" placeholder="Title" name="name" required>' +
                             '</div>' +
                         '</div>' +
                         '<div class="col-md-6">' +
@@ -415,9 +380,7 @@
                                     '<option value="" selected disabled>Select Category</option>\n\n' +
                                     '<option value="family">Family</option>\n' +
                                     '<option value="sport">Sport</option>\n' +
-                                    '<option value="cinema">Cinema</option>\n' +
                                     '<option value="kids">Kids</option>\n' +
-                                    '<option value="exhibition">Exhibition</option>\n' +
                                     '<option value="Culture">Culture</option>\n' +
                                   '</select>' +
                             '</div>' +
@@ -426,7 +389,7 @@
                     '<div class="row">' +
                         '<div class="col-md-12">' +
                             '<div class="form-group">' +
-                                '<input type="text" onfocus="(this.type=\'datetime-local\')" class="form-control" placeholder="Date and Time " name="eventTime" required>' +
+                                '<input type="text" onfocus="(this.type=\'datetime-local\')" class="form-control" placeholder="Date and Time " name="eventTime" hidden>' +
                             '</div>' +
                         '</div>' +
                     '</div>' +
@@ -442,14 +405,14 @@
                     '<div class="row">' +
                         '<div class="col-md-6">' +
                             '<div class="form-group">' +
-                                '<input type="number" class="form-control" placeholder="Price" name="price"  required>' +
+                                '<input type="number" class="form-control" placeholder="Price" name="price" value="0">' +
                             '</div>' +
                         '</div>' +
                     '</div>' +
                     '<div class="row">' +
                         '<div class="col-md-12">' +
                             '<div class="form-group">' +
-                                '<textarea class="form-control" placeholder="Description" name="description" required></textarea>' +
+                                '<textarea class="form-control" placeholder="Description" name="description"></textarea>' +
                             '</div>' +
                         '</div>' +
                         '<div class="col">' +
